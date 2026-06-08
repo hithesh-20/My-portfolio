@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hithesh D | Data Analyst Portfolio</title>
+    <meta name="description"
+        content="Portfolio of Hithesh D, a Data Analyst specializing in Python, SQL, Machine Learning, and Data Visualization.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <canvas id="bg-canvas"></canvas>
+    
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <!-- Header / Navigation -->
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">Hithesh<span class="accent">.data</span></div>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <nav>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero / Intro Section -->
+    <section id="about" class="hero container reveal">
+        <div class="hero-content glass-panel">
+            <p class="greeting">Hello, world! I am Hithesh D</p>
+            <h1 class="name">Transforming Data into <span class="accent glow-text">Strategic Value.</span></h1>
+            <p class="bio">
+                I'm a Data Analyst bridging the gap between raw data and business impact. I specialize in building end-to-end data pipelines, developing predictive machine learning models, and crafting insightful visualizations.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn primary-btn">Explore Projects</a>
+                <a href="#contact" class="btn outline-btn">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="skills" class="skills-section container reveal">
+        <h2 class="section-title">Technical <span class="accent">Arsenal</span></h2>
+        <div class="skills-grid">
+            <div class="skill-card glass-panel"><i class="fa-brands fa-python"></i> Python</div>
+            <div class="skill-card glass-panel"><i class="fa-solid fa-database"></i> SQL</div>
+            <div class="skill-card glass-panel"><i class="fa-solid fa-chart-pie"></i> Tableau</div>
+            <div class="skill-card glass-panel"><i class="fa-solid fa-bolt"></i> PySpark</div>
+            <div class="skill-card glass-panel"><i class="fa-solid fa-robot"></i> Machine Learning</div>
+            <div class="skill-card glass-panel"><i class="fa-brands fa-aws"></i> AWS / Cloud</div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section container reveal">
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+        <p class="projects-subtitle">Highlighting senior-level architectural and analytical capabilities.</p>
+        <div class="project-grid">
+
+            <!-- Project 1 -->
+            <div class="project-card glass-panel">
+                <div class="project-content">
+                    <div class="project-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3 class="project-title">End-to-End Automated ETL & Sales Dashboard</h3>
+                    <p class="project-desc">
+                        Architected an automated data pipeline extracting raw sales data, transforming it via SQL, and loading it into a data warehouse. Built a Tableau dashboard that reduced reporting time by 15 hours/week and identified a $500k revenue opportunity.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>Airflow</span>
+                        <span>Tableau</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link" title="View Code"><i class="fa-brands fa-github"></i> Source Code</a>
+                    <a href="#" class="project-link" title="Live Dashboard"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card glass-panel">
+                <div class="project-content">
+                    <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3 class="project-title">Predictive Customer Churn Model</h3>
+                    <p class="project-desc">
+                        Developed a machine learning classification model to predict customer churn with 89% accuracy. Conducted rigorous feature engineering and provided actionable retention strategies, resulting in a projected 12% decrease in churn.
+                    </p>
+                    <div class="project-tech">
+                        <span>scikit-learn</span>
+                        <span>XGBoost</span>
+                        <span>Pandas</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link" title="View Code"><i class="fa-brands fa-github"></i> Source Code</a>
+                    <a href="#" class="project-link" title="Read Case Study"><i class="fa-solid fa-file-lines"></i> Case Study</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card glass-panel">
+                <div class="project-content">
+                    <div class="project-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+                    <h3 class="project-title">A/B Testing & Feature Evaluation</h3>
+                    <p class="project-desc">
+                        Designed and analyzed A/B tests for a new checkout flow. Used statistical significance testing and cohort analysis to prove a 5% increase in conversion rate, directly driving data-informed product decisions.
+                    </p>
+                    <div class="project-tech">
+                        <span>SciPy</span>
+                        <span>Statsmodels</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link" title="View Code"><i class="fa-brands fa-github"></i> Source Code</a>
+                    <a href="#" class="project-link" title="Read Report"><i class="fa-solid fa-chart-bar"></i> Analysis Report</a>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card glass-panel">
+                <div class="project-content">
+                    <div class="project-icon"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3 class="project-title">Big Data Supply Chain Optimization</h3>
+                    <p class="project-desc">
+                        Analyzed a massive 50GB+ dataset of logistics data using distributed computing. Identified critical supply chain bottlenecks and optimized routing patterns, projecting a 10% reduction in overall delivery costs.
+                    </p>
+                    <div class="project-tech">
+                        <span>PySpark</span>
+                        <span>AWS Athena</span>
+                        <span>BigQuery</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="project-link" title="View Code"><i class="fa-brands fa-github"></i> Source Code</a>
+                    <a href="#" class="project-link" title="System Architecture"><i class="fa-solid fa-sitemap"></i> Architecture</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact" class="footer reveal">
+        <div class="container footer-content glass-panel">
+            <h2>Let's <span class="accent glow-text">Connect</span></h2>
+            <p>I'm currently looking for new opportunities and impactful roles. Whether you have a question or just want to say hi, my inbox is always open!</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/hithesh-d-8802a630b" target="_blank" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/hithesh-20" target="_blank" class="social-icon"><i class="fa-brands fa-github"></i></a>
+                <a href="mailto:hitheshkowshik@gmail.com" class="social-icon"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <a href="mailto:hitheshkowshik@gmail.com" class="btn primary-btn mt-4">Say Hello</a>
+            <p class="copyright">© 2026 Hithesh D. Built with modern web technologies.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

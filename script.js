@@ -1,138 +1,263 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // --- 1. Mobile Menu Toggle ---
+
+    // =============================================
+    // 0. Theme Toggle (Dark/Light Mode)
+    // =============================================
+    const themeToggle = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    const THEME_KEY = 'portfolio-theme';
+
+    // Initialize theme from localStorage or system preference
+    function initTheme() {
+        const saved = localStorage.getItem(THEME_KEY);
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (saved) {
+            htmlEl.setAttribute('data-theme', saved);
+        } else if (prefersDark) {
+            htmlEl.setAttribute('data-theme', 'dark');
+        } else {
+            htmlEl.setAttribute('data-theme', 'light');
+        }
+    }
+
+    function toggleTheme() {
+        const current = htmlEl.getAttribute('data-theme');
+        const next = current === 'dark' ? 'light' : 'dark';
+        htmlEl.setAttribute('data-theme', next);
+        localStorage.setItem(THEME_KEY, next);
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (!localStorage.getItem(THEME_KEY)) {
+            htmlEl.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+    });
+
+    initTheme();
+
+    // =============================================
+    // 1. Mobile Menu Toggle
+    // =============================================
     const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+    const navLinks  = document.getElementById('nav-links');
 
     if (hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            
-            // Simple animation for hamburger to X (Optional refinement)
-            const bars = hamburger.querySelectorAll('.bar');
-            if (navLinks.classList.contains('active')) {
-                bars[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-                bars[1].style.opacity = '0';
-                bars[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
+            const isOpen = navLinks.classList.toggle('active');
+            const bars   = hamburger.querySelectorAll('.bar');
+            if (isOpen) {
+                bars[0].style.transform = 'rotate(-45deg) translate(-4px, 5px)';
+                bars[1].style.opacity   = '0';
+                bars[2].style.transform = 'rotate(45deg) translate(-4px, -5px)';
             } else {
                 bars[0].style.transform = 'none';
-                bars[1].style.opacity = '1';
+                bars[1].style.opacity   = '1';
                 bars[2].style.transform = 'none';
             }
         });
 
-        // Close mobile menu when a link is clicked
-        document.querySelectorAll('.nav-links a').forEach(link => {
+        // Close menu when any link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 const bars = hamburger.querySelectorAll('.bar');
                 bars[0].style.transform = 'none';
-                bars[1].style.opacity = '1';
+                bars[1].style.opacity   = '1';
                 bars[2].style.transform = 'none';
             });
         });
     }
 
-    // --- 2. Scroll Reveal Animations (Intersection Observer) ---
-    const reveals = document.querySelectorAll('.reveal');
-
-    const observerOptions = {
-        root: null,
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
+    // =============================================
+    // 2. Navbar Scroll Effect
+    // =============================================
+    const navbar = document.getElementById('navbar');
+    const onScroll = () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
     };
+    window.addEventListener('scroll', onScroll, { passive: true });
 
-    const observer = new IntersectionObserver((entries, observer) => {
+    // =============================================
+    // 3. Cursor Glow (desktop only)
+    // =============================================
+    const cursorGlow = document.getElementById('cursor-glow');
+    if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+        document.addEventListener('mousemove', e => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top  = e.clientY + 'px';
+        });
+    } else if (cursorGlow) {
+        cursorGlow.style.display = 'none';
+    }
+
+    // =============================================
+    // 4. Scroll Reveal (Intersection Observer)
+    // =============================================
+    const revealEls = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries, obs) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
-                observer.unobserve(entry.target); // Only animate once
+                obs.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    reveals.forEach(reveal => {
-        observer.observe(reveal);
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // =============================================
+    // 5. Skill Bar Animation
+    // =============================================
+    const skillBars    = document.querySelectorAll('.skill-bar-fill');
+    const barObserver  = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+
+    skillBars.forEach(bar => barObserver.observe(bar));
+
+    // =============================================
+    // 6. Counter Animation (Stats)
+    // =============================================
+    function animateCount(el, target, duration = 1800) {
+        const start = performance.now();
+        const tick  = now => {
+            const t       = Math.min((now - start) / duration, 1);
+            const eased   = 1 - Math.pow(1 - t, 3); // ease-out-cubic
+            el.textContent = Math.round(eased * target);
+            if (t < 1) requestAnimationFrame(tick);
+        };
+        requestAnimationFrame(tick);
+    }
+
+    const statNumbers   = document.querySelectorAll('.stat-number');
+    const statsObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCount(entry.target, parseInt(entry.target.dataset.target, 10));
+                obs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.8 });
+
+    statNumbers.forEach(n => statsObserver.observe(n));
+
+    // =============================================
+    // 7. Typewriter Effect
+    // =============================================
+    const typewriterEl = document.getElementById('typewriter');
+    const roles        = ['ML Engineer', 'Data Storyteller', 'Pipeline Builder', 'Insight Creator'];
+    let rIdx = 0, cIdx = 0, deleting = false;
+
+    function typeWriter() {
+        if (!typewriterEl) return;
+        const word = roles[rIdx];
+
+        if (deleting) {
+            typewriterEl.textContent = word.slice(0, --cIdx);
+        } else {
+            typewriterEl.textContent = word.slice(0, ++cIdx);
+        }
+
+        let delay = deleting ? 55 : 95;
+
+        if (!deleting && cIdx === word.length) {
+            delay    = 2200;
+            deleting = true;
+        } else if (deleting && cIdx === 0) {
+            deleting = false;
+            rIdx     = (rIdx + 1) % roles.length;
+            delay    = 350;
+        }
+
+        setTimeout(typeWriter, delay);
+    }
+
+    // Start typewriter after hero reveal
+    setTimeout(typeWriter, 900);
+
+    // =============================================
+    // 8. Smooth Active Nav Link on Scroll
+    // =============================================
+    const sections  = document.querySelectorAll('section[id], footer[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a');
+
+    const sectionObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navAnchors.forEach(a => {
+                    a.classList.remove('active');
+                    if (a.getAttribute('href') === '#' + entry.target.id) {
+                        a.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => sectionObserver.observe(s));
+
+    // =============================================
+    // 9. Subtle Card Tilt Effect (mouse)
+    // =============================================
+    document.querySelectorAll('.project-card, .data-card, .skill-category-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect  = card.getBoundingClientRect();
+            const x     = (e.clientX - rect.left) / rect.width  - 0.5;
+            const y     = (e.clientY - rect.top)  / rect.height - 0.5;
+            const tiltX = -(y * 6).toFixed(2);
+            const tiltY =  (x * 6).toFixed(2);
+            card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
     });
 
-    // --- 3. Interactive HTML5 Canvas Background ---
-    const canvas = document.getElementById('bg-canvas');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
-
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resize);
-        resize();
-
-        class Particle {
-            constructor() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.size = Math.random() * 2 + 0.5;
-                this.speedX = Math.random() * 1 - 0.5;
-                this.speedY = Math.random() * 1 - 0.5;
-                this.color = `rgba(0, 246, 255, ${Math.random() * 0.3 + 0.1})`; // Electric Blue
-            }
-
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-
-                // Bounce off edges
-                if (this.x > width || this.x < 0) this.speedX *= -1;
-                if (this.y > height || this.y < 0) this.speedY *= -1;
-            }
-
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        function initParticles() {
-            particles = [];
-            let numParticles = (window.innerWidth < 768) ? 50 : 100; // Less particles on mobile
-            for (let i = 0; i < numParticles; i++) {
-                particles.push(new Particle());
-            }
-        }
-
-        function animateParticles() {
-            ctx.clearRect(0, 0, width, height);
-            
-            // Draw connecting lines
-            for(let i = 0; i < particles.length; i++) {
-                for(let j = i; j < particles.length; j++) {
-                    let dx = particles[i].x - particles[j].x;
-                    let dy = particles[i].y - particles[j].y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if(distance < 120) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 246, 255, ${0.1 - distance/1200})`; // Fade lines based on distance
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-
-            particles.forEach(p => {
-                p.update();
-                p.draw();
+    // =============================================
+    // 10. Parallax for floating badges
+    // =============================================
+    const badges = document.querySelectorAll('.floating-badge');
+    if (badges.length && window.matchMedia('(pointer: fine)').matches) {
+        document.addEventListener('mousemove', e => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 2;
+            const y = (e.clientY / window.innerHeight - 0.5) * 2;
+            badges.forEach(badge => {
+                const factor = parseFloat(badge.dataset.parallax || '1');
+                badge.style.transform = `translate(${x * 15 * factor}px, ${y * 15 * factor}px)`;
             });
-            requestAnimationFrame(animateParticles);
-        }
-
-        initParticles();
-        animateParticles();
+        });
     }
+
+    // =============================================
+    // 11. Smooth scroll for anchor links
+    // =============================================
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const target = document.querySelector(targetId);
+            if (target) {
+                e.preventDefault();
+                const offset = 80; // navbar height
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
 });

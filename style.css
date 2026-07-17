@@ -390,6 +390,13 @@ a {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+/* Dark theme image badge */
+[data-theme="dark"] .image-badge {
+    background: var(--bg);
+    color: var(--text);
 }
 
 /* === SECTIONS === */
@@ -445,6 +452,11 @@ section {
     font-weight: 600;
     border-radius: 20px;
     transition: var(--transition);
+}
+
+/* Dark theme year badge */
+[data-theme="dark"] .year-badge {
+    background: #2a2a2a;
 }
 
 /* === SKILLS SECTION === */

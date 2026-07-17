@@ -87,6 +87,14 @@ Update `index.html` with your:
 - Project details (title, description, tech stack, links)
 - Social links (LinkedIn, GitHub, Email)
 
+### Featured Projects
+1. **Loan Origination System** - Full-stack loan application workflow with credit risk scoring
+2. **UPI Fraud Detector** - ML model with 94% accuracy for fraud detection
+3. **Fire & Smoke Detection** - CNN with ~97.8% accuracy for safety monitoring
+4. **Campus Emergency Tap** - Real-time emergency alert platform (AIET Ideathon 2025 winner)
+5. **Customer Segmentation** - RFM analysis on 50K+ records identifying top customers
+6. **Personal Expense Tracker** - Automated expense categorization with budget alerts
+
 ## 🚀 Deployment
 
 ### GitHub Pages (Recommended)

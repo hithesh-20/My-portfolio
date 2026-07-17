@@ -1,418 +1,235 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hithesh D | Data Analyst Portfolio</title>
-    <meta name="description" content="Portfolio of Hithesh D, a Data Analyst specializing in Python, SQL, Machine Learning, and Data Visualization.">
+    <title>Hithesh D — Data Analyst & ML Builder</title>
+    <meta name="description" content="Hithesh D — Computer Science student (2023-2027), building data-driven solutions and machine learning models.">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-    <!-- Cursor Glow -->
-    <div class="cursor-glow" id="cursor-glow"></div>
-
-    <!-- Background Decoration -->
-    <div class="bg-grid"></div>
-    <div class="bg-orb orb-1"></div>
-    <div class="bg-orb orb-2"></div>
-
-    <!-- Header / Navigation -->
+    <!-- Header - Forbes Style -->
     <header class="navbar" id="navbar">
         <div class="container nav-content">
-            <div class="logo">Hithesh<span class="accent">.data</span></div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <a href="#" class="logo">Hithesh</a>
             <nav>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#contact">Connect</a></li>
                 </ul>
             </nav>
-            <a href="mailto:hitheshkowshik@gmail.com" class="btn primary-btn nav-cta">Hire Me</a>
+            <button class="theme-toggle" id="theme-toggle"><i class="fa-solid fa-moon"></i></button>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </div>
         </div>
     </header>
 
-    <!-- Hero / About Section -->
-    <section id="about" class="hero container">
-
-        <div class="hero-left reveal">
-            <div class="availability-badge">
-                <span class="status-dot"></span>
-                Available for Work
-            </div>
-            <p class="greeting">Hello, world! I am</p>
-            <h1 class="hero-name">Hithesh D</h1>
-            <h2 class="hero-role">
-                Data Analyst &amp; <span class="typewriter" id="typewriter"></span><span class="cursor-blink">|</span>
-            </h2>
-            <p class="bio">
-                I bridge the gap between raw data and business impact — specializing in end-to-end data pipelines, predictive ML models, and insightful visualizations that drive real decisions.
-            </p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-num-row">
-                        <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+    <!-- Hero Section - Forbes Magazine Style -->
+    <section id="about" class="hero interactive-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text reveal">
+                    <p class="hero-eyebrow">Data Analyst · ML Builder · Student (2023–2027)</p>
+                    <h1 class="hero-name">Hithesh D</h1>
+                    <h2 class="hero-title">Building Intelligent Data Solutions</h2>
+                    <p class="hero-description">
+                        Transforming complex data into actionable insights through machine learning and analytics. 
+                        B.Tech Computer Science student passionate about creating data-driven solutions that drive real impact.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn primary-btn interactive-btn">View Work</a>
+                        <a href="mailto:hitheshkowshik@gmail.com" class="btn outline-btn interactive-btn">Get in Touch</a>
                     </div>
-                    <span class="stat-label">Projects</span>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-num-row">
-                        <span class="stat-number" data-target="4">0</span>
+                <div class="hero-image-container reveal interactive-element">
+                    <div class="hero-image">
+                        <img src="hithkoush.png" alt="Hithesh D" class="hero-profile-image">
                     </div>
-                    <span class="stat-label">Yrs Exp.</span>
+                    <div class="image-badge interactive-badge">2025</div>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <div class="stat-num-row">
-                        <span class="stat-number" data-target="12">0</span><span class="stat-plus">+</span>
-                    </div>
-                    <span class="stat-label">ML Models</span>
-                </div>
-            </div>
-            <div class="hero-actions">
-                <a href="#projects" class="btn primary-btn">Explore Projects <i class="fa-solid fa-arrow-right"></i></a>
-                <a href="#contact" class="btn outline-btn">Contact Me</a>
             </div>
         </div>
-
-        <div class="hero-right reveal">
-            <div class="floating-badge badge-1">
-                <i class="fa-brands fa-python"></i> Python Expert
-            </div>
-            <div class="data-card">
-                <div class="data-card-header">
-                    <span class="data-card-title">
-                        <i class="fa-solid fa-chart-line"></i> Analytics Overview
-                    </span>
-                    <span class="data-card-live">
-                        <span class="live-dot"></span> Live
-                    </span>
-                </div>
-                <div class="chart-donut">
-                    <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="donutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#6366f1"/>
-                                <stop offset="100%" style="stop-color:#8b5cf6"/>
-                            </linearGradient>
-                        </defs>
-                        <circle cx="60" cy="60" r="45" fill="none" stroke="#e2e8f0" stroke-width="12"/>
-                        <circle cx="60" cy="60" r="45" fill="none" stroke="url(#donutGrad)"
-                            stroke-width="12"
-                            stroke-dasharray="250 33"
-                            stroke-linecap="round"
-                            transform="rotate(-90 60 60)"
-                            class="donut-ring"/>
-                        <text x="60" y="54" text-anchor="middle" font-size="17" font-weight="700" fill="#0f172a" font-family="Inter, sans-serif">89%</text>
-                        <text x="60" y="68" text-anchor="middle" font-size="7.5" fill="#64748b" font-family="Inter, sans-serif">ML Accuracy</text>
-                    </svg>
-                </div>
-                <div class="mini-bars">
-                    <div class="mini-bar-row">
-                        <span class="mini-label">Python</span>
-                        <div class="mini-bar-track"><div class="mini-bar-fill" style="--w: 90%"></div></div>
-                        <span class="mini-pct">90%</span>
-                    </div>
-                    <div class="mini-bar-row">
-                        <span class="mini-label">SQL</span>
-                        <div class="mini-bar-track"><div class="mini-bar-fill" style="--w: 95%"></div></div>
-                        <span class="mini-pct">95%</span>
-                    </div>
-                    <div class="mini-bar-row">
-                        <span class="mini-label">ML</span>
-                        <div class="mini-bar-track"><div class="mini-bar-fill" style="--w: 85%"></div></div>
-                        <span class="mini-pct">85%</span>
-                    </div>
-                </div>
-                <div class="data-card-footer">
-                    <span class="trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +23% this quarter</span>
-                    <span class="dot-sep"></span>
-                    <span>Updated today</span>
-                </div>
-            </div>
-            <div class="floating-badge badge-2">
-                <i class="fa-solid fa-robot"></i> ML Engineer
-            </div>
-        </div>
-
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <div class="container reveal">
-            <div class="section-header">
-                <span class="section-label">What I work with</span>
-                <h2 class="section-title">Technical <span class="accent">Arsenal</span></h2>
-            </div>
-        </div>
-
-        <!-- Marquee Ticker -->
-        <div class="marquee-wrapper">
-            <div class="marquee-content">
-                <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
-                <span class="chip"><i class="fa-solid fa-database"></i> SQL</span>
-                <span class="chip"><i class="fa-solid fa-chart-pie"></i> Tableau</span>
-                <span class="chip"><i class="fa-solid fa-bolt"></i> PySpark</span>
-                <span class="chip"><i class="fa-solid fa-robot"></i> Machine Learning</span>
-                <span class="chip"><i class="fa-brands fa-aws"></i> AWS</span>
-                <span class="chip"><i class="fa-solid fa-fire"></i> Pandas</span>
-                <span class="chip"><i class="fa-solid fa-gear"></i> scikit-learn</span>
-                <span class="chip"><i class="fa-solid fa-diagram-project"></i> Airflow</span>
-                <span class="chip"><i class="fa-solid fa-cloud"></i> BigQuery</span>
-                <span class="chip"><i class="fa-solid fa-flask"></i> XGBoost</span>
-                <span class="chip"><i class="fa-solid fa-cube"></i> dbt</span>
-                <!-- Duplicated for seamless loop -->
-                <span class="chip"><i class="fa-brands fa-python"></i> Python</span>
-                <span class="chip"><i class="fa-solid fa-database"></i> SQL</span>
-                <span class="chip"><i class="fa-solid fa-chart-pie"></i> Tableau</span>
-                <span class="chip"><i class="fa-solid fa-bolt"></i> PySpark</span>
-                <span class="chip"><i class="fa-solid fa-robot"></i> Machine Learning</span>
-                <span class="chip"><i class="fa-brands fa-aws"></i> AWS</span>
-                <span class="chip"><i class="fa-solid fa-fire"></i> Pandas</span>
-                <span class="chip"><i class="fa-solid fa-gear"></i> scikit-learn</span>
-                <span class="chip"><i class="fa-solid fa-diagram-project"></i> Airflow</span>
-                <span class="chip"><i class="fa-solid fa-cloud"></i> BigQuery</span>
-                <span class="chip"><i class="fa-solid fa-flask"></i> XGBoost</span>
-                <span class="chip"><i class="fa-solid fa-cube"></i> dbt</span>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="skills-grid reveal">
-                <div class="skill-category-card">
-                    <div class="skill-cat-header">
-                        <div class="skill-cat-icon"><i class="fa-solid fa-code"></i></div>
-                        <h3>Languages</h3>
-                    </div>
-                    <div class="skill-bars">
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>Python</span><span>90%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 90%"></div></div>
-                        </div>
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>SQL</span><span>95%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 95%"></div></div>
-                        </div>
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>R</span><span>70%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 70%"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category-card">
-                    <div class="skill-cat-header">
-                        <div class="skill-cat-icon"><i class="fa-solid fa-chart-bar"></i></div>
-                        <h3>Visualization</h3>
-                    </div>
-                    <div class="skill-bars">
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>Tableau</span><span>85%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 85%"></div></div>
-                        </div>
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>Power BI</span><span>80%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 80%"></div></div>
-                        </div>
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>Matplotlib</span><span>88%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 88%"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category-card">
-                    <div class="skill-cat-header">
-                        <div class="skill-cat-icon"><i class="fa-brands fa-aws"></i></div>
-                        <h3>Big Data &amp; Cloud</h3>
-                    </div>
-                    <div class="skill-bars">
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>PySpark</span><span>78%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 78%"></div></div>
-                        </div>
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>AWS Athena</span><span>75%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 75%"></div></div>
-                        </div>
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>BigQuery</span><span>80%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 80%"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="skill-category-card">
-                    <div class="skill-cat-header">
-                        <div class="skill-cat-icon"><i class="fa-solid fa-robot"></i></div>
-                        <h3>Machine Learning</h3>
-                    </div>
-                    <div class="skill-bars">
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>scikit-learn</span><span>88%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 88%"></div></div>
-                        </div>
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>XGBoost</span><span>82%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 82%"></div></div>
-                        </div>
-                        <div class="skill-bar-row">
-                            <div class="skill-bar-label"><span>TensorFlow</span><span>70%</span></div>
-                            <div class="skill-bar-track"><div class="skill-bar-fill" style="--target-width: 70%"></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
+    <section id="skills" class="skills-section interactive-section">
         <div class="container">
             <div class="section-header reveal">
-                <span class="section-label">What I've built</span>
-                <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
-                <p class="section-subtitle">Highlighting senior-level architectural and analytical capabilities.</p>
+                <p class="section-eyebrow">Technical Expertise</p>
+                <h2 class="section-title">Core <span class="accent">Competencies</span></h2>
             </div>
-            <div class="project-grid">
-
-                <div class="project-card reveal">
-                    <div class="project-card-top">
-                        <span class="project-number">01</span>
-                        <div class="project-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">End-to-End Automated ETL &amp; Sales Dashboard</h3>
-                        <p class="project-desc">Architected an automated data pipeline extracting raw sales data, transforming it via SQL, and loading it into a data warehouse. Built a Tableau dashboard that reduced reporting time by 15 hours/week and identified a $500k revenue opportunity.</p>
-                        <div class="project-tech">
-                            <span>Python</span><span>SQL</span><span>Airflow</span><span>Tableau</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
-                        <a href="#" class="project-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
-                    </div>
+            <div class="skills-showcase">
+                <div class="skill-category-card reveal interactive-card">
+                    <h3>Languages</h3>
+                    <p>Python • SQL • R • JavaScript • TypeScript</p>
+                    <span class="year-badge">2025</span>
                 </div>
-
-                <div class="project-card reveal">
-                    <div class="project-card-top">
-                        <span class="project-number">02</span>
-                        <div class="project-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Predictive Customer Churn Model</h3>
-                        <p class="project-desc">Developed a machine learning classification model to predict customer churn with 89% accuracy. Conducted rigorous feature engineering and provided actionable retention strategies, resulting in a projected 12% decrease in churn.</p>
-                        <div class="project-tech">
-                            <span>scikit-learn</span><span>XGBoost</span><span>Pandas</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
-                        <a href="#" class="project-link"><i class="fa-solid fa-file-lines"></i> Case Study</a>
-                    </div>
+                <div class="skill-category-card reveal interactive-card">
+                    <h3>Machine Learning</h3>
+                    <p>scikit-learn • TensorFlow • XGBoost • Pandas • NumPy • Keras</p>
+                    <span class="year-badge">2026</span>
                 </div>
-
-                <div class="project-card reveal">
-                    <div class="project-card-top">
-                        <span class="project-number">03</span>
-                        <div class="project-icon-wrap"><i class="fa-solid fa-vial-circle-check"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">A/B Testing &amp; Feature Evaluation</h3>
-                        <p class="project-desc">Designed and analyzed A/B tests for a new checkout flow. Used statistical significance testing and cohort analysis to prove a 5% increase in conversion rate, directly driving data-informed product decisions.</p>
-                        <div class="project-tech">
-                            <span>SciPy</span><span>Statsmodels</span><span>SQL</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
-                        <a href="#" class="project-link"><i class="fa-solid fa-chart-bar"></i> Analysis Report</a>
-                    </div>
+                <div class="skill-category-card reveal interactive-card">
+                    <h3>Visualization</h3>
+                    <p>Power BI • Tableau • Matplotlib • Seaborn • Plotly • D3.js</p>
+                    <span class="year-badge">2025</span>
                 </div>
-
-                <div class="project-card reveal">
-                    <div class="project-card-top">
-                        <span class="project-number">04</span>
-                        <div class="project-icon-wrap"><i class="fa-solid fa-truck-fast"></i></div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Big Data Supply Chain Optimization</h3>
-                        <p class="project-desc">Analyzed a massive 50GB+ dataset of logistics data using distributed computing. Identified critical supply chain bottlenecks and optimized routing patterns, projecting a 10% reduction in overall delivery costs.</p>
-                        <div class="project-tech">
-                            <span>PySpark</span><span>AWS Athena</span><span>BigQuery</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" class="project-link"><i class="fa-brands fa-github"></i> Source Code</a>
-                        <a href="#" class="project-link"><i class="fa-solid fa-sitemap"></i> Architecture</a>
-                    </div>
+                <div class="skill-category-card reveal interactive-card">
+                    <h3>Technologies</h3>
+                    <p>AWS • Git • Streamlit • React.js • Node.js • Flask • Docker</p>
+                    <span class="year-badge">2026</span>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Contact / Footer -->
-    <footer id="contact" class="footer reveal">
-        <div class="container footer-inner">
-            <div class="footer-left">
-                <span class="section-label footer-label">Get in touch</span>
-                <h2 class="footer-heading">Let's <span class="accent">Connect.</span></h2>
-                <p class="footer-desc">I'm currently looking for new opportunities and impactful roles. Whether you have a question or just want to say hi, my inbox is always open!</p>
-                <a href="mailto:hitheshkowshik@gmail.com" class="btn primary-btn footer-cta">
-                    Say Hello <i class="fa-solid fa-paper-plane"></i>
-                </a>
+    <!-- Projects Section - Forbes Article Style -->
+    <section id="projects" class="projects-section interactive-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-eyebrow">Featured Projects</p>
+                <h2 class="section-title">Selected <span class="accent">Work</span></h2>
             </div>
-            <div class="footer-right">
-                <div class="contact-card">
-                    <p class="contact-card-label">Find me on</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/hithesh-d-8802a630b" target="_blank" class="social-icon">
-                            <i class="fa-brands fa-linkedin-in"></i>
-                            <span>LinkedIn</span>
-                            <i class="fa-solid fa-arrow-right social-arrow"></i>
-                        </a>
-                        <a href="https://github.com/hithesh-20" target="_blank" class="social-icon">
-                            <i class="fa-brands fa-github"></i>
-                            <span>GitHub</span>
-                            <i class="fa-solid fa-arrow-right social-arrow"></i>
-                        </a>
-                        <a href="mailto:hitheshkowshik@gmail.com" class="social-icon">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>Email</span>
-                            <i class="fa-solid fa-arrow-right social-arrow"></i>
-                        </a>
-                    </div>
-                    <div class="contact-info-rows">
-                        <div class="contact-info-row">
-                            <i class="fa-solid fa-location-dot"></i>
-                            <span>India</span>
+            
+            <div class="project-grid">
+                <!-- Project 1 - Featured -->
+                <div class="project-card reveal interactive-card">
+                    <h3 class="project-title">Loan Origination System</h3>
+                    <p class="project-tech">React.js • Python • Flask • MySQL • Streamlit</p>
+                    <p>Full-stack loan application workflow system with credit risk scoring and approval pipeline. Built with modern web technologies and machine learning algorithms for intelligent decision-making.</p>
+                    <a href="https://github.com/hithesh-20/loan-origination-system" class="project-link" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                    <span class="year-badge">2025</span>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card reveal interactive-card">
+                    <h3 class="project-title">UPI Fraud Detector</h3>
+                    <p class="project-tech">Python • Random Forest • SMOTE • Streamlit</p>
+                    <p>Fraud detection model achieving 94% accuracy with SMOTE for imbalanced data. Real-time transaction monitoring with explainable AI for suspicious activity detection.</p>
+                    <a href="https://github.com/hithesh-20/upi-fraud-detector" class="project-link" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                    <span class="year-badge">2025</span>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card reveal interactive-card">
+                    <h3 class="project-title">Fire & Smoke Detection</h3>
+                    <p class="project-tech">CNN • TensorFlow • OpenCV</p>
+                    <p>VGG-inspired convolutional neural network for real-time fire and smoke detection with approximately 97.8% accuracy. Deployed for environmental safety monitoring systems.</p>
+                    <a href="https://github.com/hithesh-20/fire-smoke-detection" class="project-link" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                    <span class="year-badge">2026</span>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card reveal interactive-card">
+                    <h3 class="project-title">Campus Emergency Tap</h3>
+                    <p class="project-tech">Node.js • Express • MySQL • SSE • React.js</p>
+                    <p>Real-time emergency alert platform for educational institutions. Winner at AIET Ideathon 2025. Features instant notifications and location-based response system.</p>
+                    <a href="https://github.com/hithesh-20/campus-emergency-tap" class="project-link" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                    <span class="year-badge">2025</span>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card reveal interactive-card">
+                    <h3 class="project-title">Customer Segmentation</h3>
+                    <p class="project-tech">SQL • Power BI • RFM Analysis</p>
+                    <p>RFM analysis on 50,000+ customer records. Identified top 20% customers driving 68% of total revenue with interactive Power BI dashboards.</p>
+                    <a href="https://github.com/hithesh-20/customer-segmentation" class="project-link" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                    <span class="year-badge">2025</span>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card reveal interactive-card">
+                    <h3 class="project-title">Personal Expense Tracker</h3>
+                    <p class="project-tech">Python • Excel • Pandas</p>
+                    <p>Automated expense categorization with budget alerts and trend visualization. Python-based solution with Excel integration for seamless financial tracking.</p>
+                    <a href="https://github.com/hithesh-20/expense-tracker" class="project-link" target="_blank"><i class="fab fa-github"></i> View on GitHub</a>
+                    <span class="year-badge">2025</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section - Editorial Style -->
+    <section id="resume" class="skills-section interactive-section">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-eyebrow">Professional Journey</p>
+                <h2 class="section-title">Experience & <span class="accent">Education</span></h2>
+            </div>
+            <div class="resume-grid">
+                <div class="resume-card reveal interactive-card">
+                    <h3>Education</h3>
+                    <p><strong>B.Tech Computer Science</strong><br>2023 - 2027<br>Currently pursuing undergraduate degree with focus on data science and machine learning.</p>
+                    <span class="year-badge">2025-2027</span>
+                </div>
+                <div class="resume-card reveal interactive-card">
+                    <h3>Experience</h3>
+                    <p><strong>Data Analytics Intern</strong><br>2025<br>Hands-on experience in real-world analytics projects.</p>
+                    <p><strong>ML Project Contributor</strong><br>2024 to Present<br>Developing machine learning models for various applications.</p>
+                    <span class="year-badge">2025</span>
+                </div>
+                <div class="resume-card reveal interactive-card">
+                    <h3>Certifications</h3>
+                    <div class="certifications-text">
+                        <div class="cert-item">
+                            <h4>Machine Learning Specialization</h4>
+                            <p><strong>Provider:</strong> University of Washington • <strong>Year:</strong> 2026 • <strong>Work:</strong> 4 capstone projects, real datasets</p>
                         </div>
-                        <div class="contact-info-row">
-                            <i class="fa-solid fa-clock"></i>
-                            <span>IST (UTC+5:30)</span>
+                        <div class="cert-item">
+                            <h4>Data Structures & Backend with Java</h4>
+                            <p><strong>Provider:</strong> Board Infinity • <strong>Year:</strong> 2026 • <strong>Work:</strong> Full backend build, database, APIs</p>
+                        </div>
+                        <div class="cert-item">
+                            <h4>Frontend for Java Full Stack Development</h4>
+                            <p><strong>Provider:</strong> Board Infinity • <strong>Year:</strong> 2026 • <strong>Work:</strong> React dashboards, API integration</p>
+                        </div>
+                        <div class="cert-item">
+                            <h4>Google Cloud Data & Infrastructure</h4>
+                            <p><strong>Provider:</strong> Google Cloud • <strong>Year:</strong> 2025 • <strong>Work:</strong> 6 labs: BigQuery, ETL, ML deployment</p>
+                        </div>
+                        <div class="cert-item">
+                            <h4>Introduction to Software Engineering</h4>
+                            <p><strong>Provider:</strong> IBM • <strong>Year:</strong> 2025 • <strong>Work:</strong> Git, CI/CD, SDLC, Agile projects</p>
+                        </div>
+                        <div class="cert-item">
+                            <h4>Introduction to Web Development</h4>
+                            <p><strong>Provider:</strong> IBM • <strong>Year:</strong> 2025 • <strong>Work:</strong> HTML/CSS/JS projects, responsive design</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <div class="container footer-bottom-inner">
-                <p class="copyright">© 2026 Hithesh D. Built with passion &amp; modern web technologies.</p>
-                <div class="logo footer-logo">Hithesh<span class="accent">.data</span></div>
+    </section>
+
+    <!-- Contact Section - Dark Forbes Style -->
+    <section id="contact" class="contact-section interactive-section">
+        <div class="container">
+            <div class="contact-content reveal interactive-content">
+                <h2>Let's <span class="accent">Connect</span></h2>
+                <p>Available for data analytics projects, machine learning collaborations, and speaking opportunities.</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/hithesh-d-8802a630b" class="social-link interactive-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/hithesh-20" class="social-link interactive-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="mailto:hitheshkowshik@gmail.com" class="social-link interactive-link"><i class="fa-solid fa-envelope"></i> Email</a>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Footer - Editorial Clean -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hithesh D. All rights reserved. | <a href="mailto:hitheshkowshik@gmail.com">hitheshkowshik@gmail.com</a></p>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
-
 </html>

@@ -4,13 +4,26 @@ A modern, responsive portfolio website showcasing data analytics, machine learni
 
 ## 🌟 Features
 
-- **Modern Design**: Clean, professional aesthetic with Playfair Display typography and Inter for UI
+### ✨ Visual & Animation Features
+- **Scroll Reveal Animations** - Elements fade in smoothly as you scroll
+- **Smooth Scroll Progress Bar** - Visual indicator at the top of the page
+- **Interactive Hover Effects** - Cards lift and transform on hover
+- **Ripple Button Effects** - Click animations on buttons
+- **Parallax Hero Image** - Subtle 3D tilt effect on profile image
+- **Section Highlights** - Animated borders when navigating to sections
+
+### 🎨 Design Features
+- **Modern Forbes-inspired Design**: Clean, professional aesthetic with Playfair Display typography and Inter for UI
 - **Dark/Light Theme**: System preference detection with manual toggle and localStorage persistence
-- **Smooth Animations**: Scroll-triggered reveals, counter animations, skill bar fills, typewriter effect
 - **Fully Responsive**: Mobile-first approach with breakpoints at 768px, 900px, 1024px
-- **Accessibility**: Semantic HTML, focus-visible states, reduced motion support, ARIA labels
+- **Accessibility**: Semantic HTML, focus-visible states, reduced motion support
 - **Performance**: Vanilla JS (no frameworks), CSS custom properties, optimized animations
-- **Interactive Elements**: Cursor glow effect, card tilt on hover, parallax floating badges, marquee ticker
+
+### 🚀 Interactive Elements
+- **Mobile Menu Toggle** - Hamburger menu with smooth transitions
+- **Theme Toggle** - Animated sun/moon icon rotation on theme switch (top-right corner)
+- **Smooth Scrolling** - Smooth anchor link navigation
+- **Interactive Cards** - Skill and project cards with hover animations
 
 ## 🚀 Live Demo
 
@@ -36,39 +49,43 @@ My-portfolio/
 
 ## ✨ Key Sections
 
-1. **Hero/About** - Animated stats, typewriter role rotator, availability badge
-2. **Skills** - Animated skill bars, infinite marquee technology ticker
-3. **Projects** - 4 featured project cards with tech stacks and links
-4. **Contact/Footer** - Social links, contact info, hire me CTA
+1. **Hero/About** - Professional introduction with profile image
+2. **Skills** - Technical expertise categorized by domain
+3. **Projects** - Featured project cards with tech stacks and GitHub links
+4. **Resume** - Education, Experience, and Certifications
+5. **Contact/Footer** - Social links and contact information
 
 ## 🎨 Customization
 
 ### Colors & Theming
-Edit CSS variables in `:root` (style.css lines 1-50):
+The portfolio supports dark/light theme switching automatically. CSS variables in `style.css`:
+
 ```css
+/* Light theme variables */
 :root {
-  --accent: #6366f1;
-  --accent-2: #8b5cf6;
-  --bg-color: #f8fafc;
-  --text-primary: #0f172a;
-  /* ... more variables */
+  --bg: #ffffff;
+  --bg-alt: #f8f8f8;
+  --text: #000000;
+  --text-light: #333333;
+  --border: #e5e5e5;
+}
+
+/* Dark theme (applied via data-theme="dark") */
+[data-theme="dark"] {
+  --bg: #0a0a0a;
+  --bg-alt: #1a1a1a;
+  --text: #ffffff;
+  --text-light: #cccccc;
+  --border: #333333;
 }
 ```
 
 ### Content
 Update `index.html` with your:
 - Personal info (name, title, bio, contact)
-- Stats (projects, years experience, models)
-- Skills & proficiency percentages
+- Skills & technology stacks
 - Project details (title, description, tech stack, links)
 - Social links (LinkedIn, GitHub, Email)
-
-### Animations
-Adjust timing in CSS variables:
-```css
---transition: all 0.32s cubic-bezier(0.4, 0, 0.2, 1);
---transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-```
 
 ## 🚀 Deployment
 
@@ -86,10 +103,8 @@ Drag and drop the folder or connect your Git repo for automatic deployments.
 - Semantic HTML5 elements (`header`, `nav`, `main`, `section`, `footer`)
 - Proper heading hierarchy (h1 → h2 → h3)
 - Focus-visible outlines for keyboard navigation
-- ARIA labels on interactive elements
 - `prefers-reduced-motion` media query support
 - Sufficient color contrast ratios
-- Alt text for all decorative SVGs (hidden via `aria-hidden`)
 
 ## 📱 Browser Support
 

@@ -95,6 +95,69 @@ Update `index.html` with your:
 5. **Customer Segmentation** - RFM analysis on 50K+ records identifying top customers
 6. **Personal Expense Tracker** - Automated expense categorization with budget alerts
 
+## 🛠️ Setup & Installation
+
+### Prerequisites
+- Git installed on your system
+- A web browser (for viewing the portfolio)
+- VS Code (recommended) with Live Server extension for local development
+
+### Access from Anywhere - GitHub Commands
+
+#### Initial Setup
+```bash
+# Clone the repository
+git clone https://github.com/hithesh-20/My-portfolio.git
+
+# Navigate to the project directory
+cd My-portfolio
+```
+
+#### Access & Update Commands (Anytime, Anywhere)
+```bash
+# View remote repository URL
+git remote -v
+
+# Pull latest changes from GitHub (update your local copy)
+git pull origin main
+
+# Check current Git status
+git status
+
+# Switch to the main branch
+git checkout main
+```
+
+#### Making Changes & Updates
+```bash
+# Add all changes to staging
+git add .
+
+# Commit your changes with a message
+git commit -m "Update portfolio content"
+
+# Push changes to GitHub (updates remote repository)
+git push origin main
+
+# Or push to a specific branch
+git push origin your-branch-name
+```
+
+#### Quick Access Commands
+```bash
+# Open project in VS Code
+code .
+
+# View all project files
+ls -la
+
+# View Git commit history
+git log --oneline --graph
+
+# View current branch
+git branch
+```
+
 ## 🚀 Deployment
 
 ### GitHub Pages (Recommended)

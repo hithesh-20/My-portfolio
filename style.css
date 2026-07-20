@@ -1,9 +1,9 @@
 /* ==========================================
     Hithesh Portfolio - Modern Forbes-inspired Design
-    Clean, human-readable CSS for a professional look
+    FULLY FLUID & ADAPTIVE - Scales to ANY display size
+    Uses clamp(), vw/vh, and CSS Grid auto-fit
     Light theme: BLACK text on WHITE background
     Dark theme: WHITE text on DARK background
-    FULLY RESPONSIVE - Mobile First + Desktop Enhanced
     ========================================== */
 
 /* === ROOT VARIABLES === */
@@ -25,11 +25,14 @@
     --text-light: #333333;
     --border: #e5e5e5;
     
-    --hero-name-size: clamp(2.8rem, 10vw, 5rem);
-    --section-title-size: clamp(1.8rem, 6vw, 3rem);
-    --card-padding: 2.5rem 2rem;
-    --hero-image-width: 320px;
-    --hero-image-height: 400px;
+    /* Fluid sizing - scales with viewport */
+    --fluid-font-size: clamp(14px, 1vw + 10px, 18px);
+    --hero-name-size: clamp(2.2rem, 8vw, 5.5rem);
+    --section-title-size: clamp(1.6rem, 4.5vw, 3.2rem);
+    --card-padding: clamp(1.25rem, 2.5vw, 2.5rem);
+    --grid-gap: clamp(1rem, 2vw, 2.5rem);
+    --hero-image-size: clamp(200px, 30vw, 320px);
+    --container-padding: clamp(1rem, 3vw, 2rem);
     
     --transition: all 0.3s ease;
 }
@@ -42,14 +45,11 @@
     --text-light: #cccccc;
     --border: #333333;
     
-    --hero-name-size: clamp(2.4rem, 8vw, 4rem);
-    --section-title-size: clamp(1.6rem, 5vw, 2.5rem);
-    --card-padding: 2rem 1.5rem;
-    --hero-image-width: 280px;
-    --hero-image-height: 350px;
+    --hero-name-size: clamp(2rem, 7vw, 4.5rem);
+    --section-title-size: clamp(1.4rem, 4vw, 2.8rem);
 }
 
-/* === BASE STYLES - Mobile First === */
+/* === BASE STYLES - Fully Fluid === */
 * {
     margin: 0;
     padding: 0;
@@ -59,20 +59,8 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 14px;
-}
-
-/* Larger font base for tablets and up */
-@media (min-width: 768px) {
-    html {
-        font-size: 15px;
-    }
-}
-
-@media (min-width: 1024px) {
-    html {
-        font-size: 16px;
-    }
+    font-size: var(--fluid-font-size);
+    /* CSS locks: font-size = 14px at 400px viewport, 18px at 1400px viewport */
 }
 
 body {
@@ -89,13 +77,7 @@ body {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.25rem;
-}
-
-@media (min-width: 768px) {
-    .container {
-        padding: 0 2rem;
-    }
+    padding: 0 var(--container-padding);
 }
 
 a {
@@ -106,9 +88,10 @@ a {
 img {
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
-/* === HEADER & NAVIGATION - Mobile First === */
+/* === HEADER & NAVIGATION - Adaptive === */
 .navbar {
     position: fixed;
     top: 0;
@@ -135,18 +118,12 @@ img {
 
 .logo {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
     font-weight: 700;
     letter-spacing: -0.5px;
     color: var(--text);
     transition: var(--transition);
     z-index: 1001;
-}
-
-@media (min-width: 768px) {
-    .logo {
-        font-size: 1.75rem;
-    }
 }
 
 /* === MOBILE NAVIGATION OVERLAY === */
@@ -174,15 +151,15 @@ img {
     list-style: none;
 }
 
-/* Mobile Navigation - Full Screen Menu */
+/* Navigation - adapts based on available space */
 @media (max-width: 899px) {
     .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 80%;
-        max-width: 320px;
+        width: min(80%, 320px);
         height: 100vh;
+        height: 100dvh;
         background: var(--bg);
         flex-direction: column;
         justify-content: center;
@@ -224,7 +201,7 @@ img {
 @media (min-width: 900px) {
     .nav-links {
         display: flex;
-        gap: 2.5rem;
+        gap: clamp(1.5rem, 3vw, 2.5rem);
         position: static;
         width: auto;
         height: auto;
@@ -237,7 +214,7 @@ img {
     }
 
     .nav-links a {
-        font-size: 0.85rem;
+        font-size: clamp(0.75rem, 0.8vw, 0.85rem);
         padding: 0.5rem 0;
         width: auto;
         text-align: left;
@@ -273,7 +250,7 @@ img {
     width: 100%;
 }
 
-/* === HAMBURGER MENU - Mobile === */
+/* === HAMBURGER MENU === */
 .hamburger {
     display: flex;
     flex-direction: column;
@@ -315,8 +292,8 @@ img {
 .theme-toggle {
     background: none;
     border: 1px solid var(--border);
-    width: 36px;
-    height: 36px;
+    width: clamp(32px, 3vw, 36px);
+    height: clamp(32px, 3vw, 36px);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -328,7 +305,7 @@ img {
 
 .theme-toggle i {
     color: var(--text);
-    font-size: 1rem;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
     transition: var(--transition);
 }
 
@@ -345,7 +322,7 @@ img {
     transform: rotate(180deg) scale(0.9);
 }
 
-/* === HERO SECTION - Mobile First === */
+/* === HERO SECTION - Fluid Layout === */
 .hero {
     min-height: 100vh;
     min-height: 100dvh;
@@ -362,7 +339,7 @@ img {
     position: absolute;
     top: 0;
     right: 0;
-    width: 40%;
+    width: min(40%, 500px);
     height: 100%;
     background: var(--bg-alt);
     z-index: 0;
@@ -373,58 +350,52 @@ img {
 .hero-content {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: clamp(1rem, 3vw, 4rem);
     align-items: center;
     position: relative;
     z-index: 1;
     text-align: center;
-    padding: 2rem 0;
+    padding: clamp(1rem, 3vw, 4rem) 0;
 }
 
-@media (min-width: 900px) {
+/* When there's enough horizontal space, switch to side-by-side */
+@media (min-width: 700px) and (orientation: landscape),
+       (min-width: 900px) {
     .hero-content {
         grid-template-columns: 1fr 1fr;
-        gap: 4rem;
         text-align: left;
-        padding: 4rem 0;
     }
 }
 
 .hero-text {
-    padding: 2rem 0;
+    padding: clamp(1rem, 3vw, 4rem) 0;
     order: 1;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) and (orientation: landscape),
+       (min-width: 900px) {
     .hero-text {
-        padding: 4rem 0;
         order: 0;
     }
 }
 
 .hero-eyebrow {
     font-family: var(--font-condensed);
-    font-size: 0.7rem;
+    font-size: clamp(0.65rem, 0.8vw, 0.75rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: var(--forbes-gray);
-    margin-bottom: 0.75rem;
+    margin-bottom: clamp(0.5rem, 1vw, 1rem);
     transition: var(--transition);
-}
-
-@media (min-width: 768px) {
-    .hero-eyebrow {
-        font-size: 0.75rem;
-    }
 }
 
 .hero-name {
     font-family: var(--font-serif);
     font-size: var(--hero-name-size);
-    line-height: 1.1;
+    line-height: 1.05;
     font-weight: 700;
-    letter-spacing: -1px;
+    letter-spacing: clamp(-0.5px, -0.3vw, -2px);
     color: var(--text);
     margin-bottom: 0.5rem;
     transition: var(--transition);
@@ -432,44 +403,39 @@ img {
 
 .hero-title {
     font-family: var(--font-serif);
-    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-size: clamp(1.1rem, 3vw, 2rem);
     font-weight: 400;
     color: var(--text-light);
     font-style: italic;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 2vw, 2rem);
     transition: var(--transition);
-}
-
-@media (min-width: 768px) {
-    .hero-title {
-        margin-bottom: 2rem;
-    }
 }
 
 .hero-description {
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 1.2vw, 1.1rem);
     color: var(--text-light);
     line-height: 1.8;
     max-width: 500px;
-    margin: 0 auto 2rem auto;
+    margin: 0 auto clamp(1.5rem, 3vw, 2.5rem) auto;
     transition: var(--transition);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) and (orientation: landscape),
+       (min-width: 900px) {
     .hero-description {
-        font-size: 1.1rem;
-        margin: 0 0 2.5rem 0;
+        margin-left: 0;
     }
 }
 
 .hero-actions {
     display: flex;
-    gap: 1rem;
+    gap: clamp(0.5rem, 1.5vw, 1rem);
     justify-content: center;
     flex-wrap: wrap;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 700px) and (orientation: landscape),
+       (min-width: 900px) {
     .hero-actions {
         justify-content: flex-start;
     }
@@ -481,9 +447,9 @@ img {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
+    padding: clamp(0.6rem, 1.2vw, 0.875rem) clamp(1rem, 2.5vw, 2rem);
     font-family: var(--font-condensed);
-    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 0.9vw, 0.85rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -492,13 +458,6 @@ img {
     border: none;
     white-space: nowrap;
     touch-action: manipulation;
-}
-
-@media (min-width: 768px) {
-    .btn {
-        padding: 0.875rem 2rem;
-        font-size: 0.85rem;
-    }
 }
 
 .primary-btn {
@@ -532,47 +491,25 @@ img {
     background: var(--bg-alt);
 }
 
-/* === HERO IMAGE - Mobile First === */
+/* === HERO IMAGE - Fluid === */
 .hero-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem 0 2rem 0;
+    padding: clamp(0.5rem, 2vw, 4rem) 0;
     transition: var(--transition);
     position: relative;
-    order: 0;
-}
-
-@media (min-width: 900px) {
-    .hero-image-container {
-        padding: 4rem 0;
-        order: 0;
-    }
 }
 
 .hero-image {
-    width: min(280px, 70vw);
-    height: min(350px, 80vw);
+    width: clamp(180px, min(35vw, 280px), 320px);
+    height: clamp(220px, min(45vw, 350px), 400px);
     position: relative;
     background: var(--forbes-light-gray);
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
-}
-
-@media (min-width: 480px) {
-    .hero-image {
-        width: 300px;
-        height: 380px;
-    }
-}
-
-@media (min-width: 900px) {
-    .hero-image {
-        width: var(--hero-image-width);
-        height: var(--hero-image-height);
-    }
 }
 
 .hero-image::before {
@@ -627,14 +564,8 @@ img {
 
 /* === SECTIONS === */
 section {
-    padding: 50px 0;
+    padding: clamp(2rem, 6vw, 5rem) 0;
     transition: var(--transition);
-}
-
-@media (min-width: 768px) {
-    section {
-        padding: 80px 0;
-    }
 }
 
 .interactive-section {
@@ -642,18 +573,12 @@ section {
 }
 
 .section-header {
-    margin-bottom: 2.5rem;
-}
-
-@media (min-width: 768px) {
-    .section-header {
-        margin-bottom: 4rem;
-    }
+    margin-bottom: clamp(1.5rem, 4vw, 4rem);
 }
 
 .section-eyebrow {
     font-family: var(--font-condensed);
-    font-size: 0.7rem;
+    font-size: clamp(0.65rem, 0.8vw, 0.75rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -662,27 +587,15 @@ section {
     transition: var(--transition);
 }
 
-@media (min-width: 768px) {
-    .section-eyebrow {
-        font-size: 0.75rem;
-    }
-}
-
 .section-title {
     font-family: var(--font-serif);
     font-size: var(--section-title-size);
     font-weight: 700;
-    letter-spacing: -0.5px;
+    letter-spacing: clamp(-0.3px, -0.5vw, -1px);
     color: var(--text);
     margin-bottom: 0;
     transition: var(--transition);
     line-height: 1.2;
-}
-
-@media (min-width: 768px) {
-    .section-title {
-        letter-spacing: -1px;
-    }
 }
 
 .section-title .accent {
@@ -699,16 +612,10 @@ section {
     background: var(--forbes-light-gray);
     color: var(--text);
     font-family: var(--font-condensed);
-    font-size: 0.65rem;
+    font-size: clamp(0.6rem, 0.7vw, 0.7rem);
     font-weight: 600;
     border-radius: 20px;
     transition: var(--transition);
-}
-
-@media (min-width: 768px) {
-    .year-badge {
-        font-size: 0.7rem;
-    }
 }
 
 /* Dark theme year badge */
@@ -716,7 +623,7 @@ section {
     background: #2a2a2a;
 }
 
-/* === SKILLS SECTION - Mobile First === */
+/* === SKILLS SECTION - Auto-fit Grid === */
 .skills-section {
     background: var(--bg-alt);
     border-top: 1px solid var(--border);
@@ -725,36 +632,17 @@ section {
 
 .skills-showcase {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-}
-
-@media (min-width: 480px) {
-    .skills-showcase {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 900px) {
-    .skills-showcase {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .skill-category-card {
     background: var(--bg);
     border: 1px solid var(--border);
-    padding: 1.75rem 1.5rem;
+    padding: var(--card-padding);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
-}
-
-@media (min-width: 768px) {
-    .skill-category-card {
-        padding: var(--card-padding);
-    }
 }
 
 @media (hover: hover) {
@@ -766,39 +654,24 @@ section {
 
 .skill-category-card h3 {
     font-family: var(--font-serif);
-    font-size: 1.15rem;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.75rem, 1.5vw, 1.5rem);
     color: var(--text);
-    padding-bottom: 0.75rem;
+    padding-bottom: clamp(0.5rem, 1vw, 1rem);
     border-bottom: 1px solid var(--border);
     transition: var(--transition);
 }
 
-@media (min-width: 768px) {
-    .skill-category-card h3 {
-        font-size: 1.25rem;
-        margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
-    }
-}
-
 .skill-category-card p {
     font-family: var(--font-sans);
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
     color: var(--text-light);
     line-height: 1.7;
     transition: var(--transition);
 }
 
-@media (min-width: 768px) {
-    .skill-category-card p {
-        font-size: 0.95rem;
-        line-height: 1.8;
-    }
-}
-
-/* === PROJECTS SECTION - Mobile First === */
+/* === PROJECTS SECTION - Auto-fit Grid === */
 .projects-section {
     background: var(--bg);
     transition: var(--transition);
@@ -806,42 +679,18 @@ section {
 
 .project-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-@media (min-width: 480px) {
-    .project-grid {
-        gap: 2.5rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .project-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .project-grid {
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    }
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+    gap: var(--grid-gap);
 }
 
 .project-card {
     background: var(--bg);
     border-top: 3px solid var(--text);
-    padding: 1.5rem 0 0 0;
+    padding: clamp(1.25rem, 2.5vw, 2.5rem) 0 0 0;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
     width: 100%;
-}
-
-@media (min-width: 768px) {
-    .project-card {
-        padding: 2.5rem 0 0 0;
-    }
 }
 
 @media (hover: hover) {
@@ -850,62 +699,38 @@ section {
     }
 }
 
-/* Tap feedback for mobile */
 .project-card:active {
     transform: scale(0.99);
 }
 
 .project-title {
     font-family: var(--font-serif);
-    font-size: 1.4rem;
+    font-size: clamp(1.2rem, 2.2vw, 1.75rem);
     font-weight: 700;
-    letter-spacing: -0.3px;
+    letter-spacing: clamp(-0.2px, -0.3vw, -0.5px);
     color: var(--text);
-    margin-bottom: 0.75rem;
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
     transition: var(--transition);
-}
-
-@media (min-width: 768px) {
-    .project-title {
-        font-size: 1.75rem;
-        letter-spacing: -0.5px;
-    }
 }
 
 .project-tech {
     font-family: var(--font-condensed);
-    font-size: 0.7rem;
+    font-size: clamp(0.65rem, 0.75vw, 0.75rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     color: var(--text-light);
-    margin-bottom: 0.75rem;
+    margin-bottom: clamp(0.5rem, 1vw, 1rem);
     transition: var(--transition);
     word-wrap: break-word;
 }
 
-@media (min-width: 768px) {
-    .project-tech {
-        font-size: 0.75rem;
-        margin-bottom: 1rem;
-        letter-spacing: 1px;
-    }
-}
-
 .project-description {
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 1vw, 1rem);
     color: var(--text-light);
     line-height: 1.7;
-    margin-bottom: 1.5rem;
+    margin-bottom: clamp(1rem, 2vw, 2rem);
     transition: var(--transition);
-}
-
-@media (min-width: 768px) {
-    .project-description {
-        font-size: 1rem;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-    }
 }
 
 .project-link {
@@ -913,22 +738,15 @@ section {
     align-items: center;
     gap: 0.5rem;
     font-family: var(--font-condensed);
-    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 0.85vw, 0.85rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text);
     transition: var(--transition);
-    padding: 0.6rem 0;
+    padding: clamp(0.5rem, 0.8vw, 0.75rem) 0;
     border-bottom: 1px solid var(--text);
     touch-action: manipulation;
-}
-
-@media (min-width: 768px) {
-    .project-link {
-        font-size: 0.85rem;
-        padding: 0.75rem 0;
-    }
 }
 
 @media (hover: hover) {
@@ -943,38 +761,19 @@ section {
     gap: 0.75rem;
 }
 
-/* === RESUME SECTION - Mobile First === */
+/* === RESUME SECTION - Auto-fit Grid === */
 .resume-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-    .resume-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-}
-
-@media (min-width: 900px) {
-    .resume-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .resume-card {
     background: var(--bg);
     border-left: 3px solid var(--text);
-    padding: 1.75rem;
+    padding: var(--card-padding);
     transition: var(--transition);
     overflow: hidden;
-}
-
-@media (min-width: 768px) {
-    .resume-card {
-        padding: 2.5rem;
-    }
 }
 
 @media (hover: hover) {
@@ -990,35 +789,20 @@ section {
 
 .resume-card h3 {
     font-family: var(--font-serif);
-    font-size: 1.3rem;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: clamp(0.75rem, 1.5vw, 1.5rem);
     color: var(--text);
-    padding-bottom: 0.75rem;
+    padding-bottom: clamp(0.5rem, 1vw, 1rem);
     border-bottom: 1px solid var(--border);
     transition: var(--transition);
 }
 
-@media (min-width: 768px) {
-    .resume-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-        padding-bottom: 1rem;
-    }
-}
-
 .resume-card p {
-    font-size: 0.9rem;
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
     line-height: 1.8;
     color: var(--text-light);
     transition: var(--transition);
-}
-
-@media (min-width: 768px) {
-    .resume-card p {
-        font-size: 0.95rem;
-        line-height: 2;
-    }
 }
 
 .resume-card p strong {
@@ -1038,44 +822,25 @@ section {
 
 .certifications-header h3 {
     font-family: var(--font-serif);
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
     font-weight: 600;
     color: var(--text);
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--border);
 }
 
-/* === CERTIFICATIONS GRID - Mobile First === */
+/* === CERTIFICATIONS GRID - Auto-fit === */
 .certifications-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-@media (min-width: 480px) {
-    .certifications-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.25rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .certifications-grid {
-        gap: 1.5rem;
-    }
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(0.75rem, 1.5vw, 1.5rem);
 }
 
 .cert-item {
     background: var(--bg);
     border: 1px solid var(--border);
-    padding: 1.25rem;
+    padding: clamp(1rem, 1.8vw, 1.5rem);
     transition: var(--transition);
-}
-
-@media (min-width: 768px) {
-    .cert-item {
-        padding: 1.5rem;
-    }
 }
 
 @media (hover: hover) {
@@ -1091,31 +856,18 @@ section {
 
 .cert-item h4 {
     font-family: var(--font-serif);
-    font-size: 1rem;
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
     font-weight: 600;
     color: var(--text);
     margin-bottom: 0.5rem;
     transition: var(--transition);
 }
 
-@media (min-width: 768px) {
-    .cert-item h4 {
-        font-size: 1.1rem;
-    }
-}
-
 .cert-item p {
-    font-size: 0.85rem;
+    font-size: clamp(0.8rem, 0.9vw, 0.9rem);
     color: var(--text-light);
     line-height: 1.5;
     margin: 0;
-}
-
-@media (min-width: 768px) {
-    .cert-item p {
-        font-size: 0.9rem;
-        line-height: 1.6;
-    }
 }
 
 .cert-item p strong {
@@ -1153,65 +905,36 @@ section {
     }
 }
 
-/* === CONTACT SECTION - Mobile First === */
+/* === CONTACT SECTION === */
 .contact-section {
     text-align: center;
-    padding: 60px 0;
+    padding: clamp(3rem, 8vw, 6rem) 0;
     background: var(--bg-alt);
     color: var(--text);
     transition: var(--transition);
 }
 
-@media (min-width: 768px) {
-    .contact-section {
-        padding: 100px 0;
-    }
-}
-
 .contact-section h2 {
     font-family: var(--font-serif);
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
     font-weight: 700;
-    letter-spacing: -0.5px;
+    letter-spacing: clamp(-0.3px, -0.5vw, -1px);
     margin-bottom: 1rem;
     color: var(--text);
 }
 
-@media (min-width: 768px) {
-    .contact-section h2 {
-        font-size: 2.5rem;
-        letter-spacing: -1px;
-    }
-}
-
 .contact-section p {
     color: var(--text-light);
-    margin-bottom: 2rem;
-    font-size: 1rem;
-    padding: 0 1rem;
-}
-
-@media (min-width: 768px) {
-    .contact-section p {
-        margin-bottom: 2.5rem;
-        font-size: 1.1rem;
-        padding: 0;
-    }
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    padding: 0 max(0.5rem, 2vw);
 }
 
 .social-links {
     display: flex;
-    gap: 1rem;
+    gap: clamp(0.5rem, 1.5vw, 1.5rem);
     justify-content: center;
     flex-wrap: wrap;
-    padding: 0 0.5rem;
-}
-
-@media (min-width: 768px) {
-    .social-links {
-        gap: 1.5rem;
-        padding: 0;
-    }
 }
 
 .social-link {
@@ -1219,22 +942,15 @@ section {
     align-items: center;
     gap: 0.5rem;
     font-family: var(--font-condensed);
-    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 0.85vw, 0.85rem);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text);
     transition: var(--transition);
-    padding: 0.7rem 1.2rem;
+    padding: clamp(0.6rem, 0.9vw, 0.75rem) clamp(0.8rem, 1.8vw, 1.5rem);
     border: 1px solid var(--border);
     touch-action: manipulation;
-}
-
-@media (min-width: 768px) {
-    .social-link {
-        font-size: 0.85rem;
-        padding: 0.75rem 1.5rem;
-    }
 }
 
 @media (hover: hover) {
@@ -1257,20 +973,13 @@ section {
 
 /* === FOOTER === */
 .footer {
-    padding: 2rem 0;
+    padding: clamp(1.5rem, 3vw, 3rem) 0;
     border-top: 1px solid var(--border);
     text-align: center;
     color: var(--forbes-gray);
-    font-size: 0.8rem;
+    font-size: clamp(0.75rem, 0.85vw, 0.85rem);
     background: var(--bg-alt);
     transition: var(--transition);
-}
-
-@media (min-width: 768px) {
-    .footer {
-        padding: 3rem 0;
-        font-size: 0.85rem;
-    }
 }
 
 .footer a {
@@ -1316,115 +1025,11 @@ section {
     }
 }
 
-/* === RESPONSIVE BREAKPOINTS === */
-
-/* Small phones */
-@media (max-width: 360px) {
-    .container {
-        padding: 0 1rem;
-    }
-    
-    .hero-name {
-        font-size: 2.2rem;
-    }
-    
-    .hero-image {
-        width: 200px;
-        height: 250px;
-    }
-    
-    .project-title {
-        font-size: 1.2rem;
-    }
-    
-    .skill-category-card {
-        padding: 1.25rem;
-    }
-    
-    .resume-card {
-        padding: 1.25rem;
-    }
-    
-    .cert-item {
-        padding: 1rem;
-    }
-    
-    .social-link {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.75rem;
-    }
-}
-
-/* Medium phones to small tablets */
-@media (min-width: 361px) and (max-width: 480px) {
-    .hero-image {
-        width: 240px;
-        height: 300px;
-    }
-    
-    .hero-name {
-        font-size: 2.5rem;
-    }
-}
-
-/* Tablets */
-@media (min-width: 481px) and (max-width: 767px) {
-    .hero-image {
-        width: 280px;
-        height: 350px;
-    }
-    
-    .hero-name {
-        font-size: 3rem;
-    }
-    
-    .skills-showcase {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Small laptops */
-@media (min-width: 768px) and (max-width: 899px) {
-    .hero-content {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        text-align: left;
-    }
-    
-    .hero-text {
-        padding: 2rem 0;
-    }
-    
-    .hero-description {
-        margin: 0 0 2rem 0;
-    }
-    
-    .hero-actions {
-        justify-content: flex-start;
-    }
-    
-    .hero-image-container {
-        padding: 2rem 0;
-    }
-    
-    .hero-image {
-        width: 240px;
-        height: 300px;
-    }
-}
-
-/* Hide desktop parallax on touch devices */
-@media (hover: none) {
-    .hero-profile-image {
-        transform: none !important;
-    }
-}
-
-/* Landscape phone mode */
+/* === Landscape phone mode === */
 @media (max-height: 500px) and (orientation: landscape) {
     .hero {
         min-height: auto;
-        padding: 5rem 0 2rem 0;
+        padding: 4rem 0 1rem 0;
     }
     
     .hero-content {
@@ -1434,8 +1039,8 @@ section {
     }
     
     .hero-image {
-        width: 160px;
-        height: 200px;
+        width: 140px;
+        height: 180px;
     }
     
     .hero-text {
@@ -1443,17 +1048,17 @@ section {
     }
     
     .hero-name {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .hero-title {
-        font-size: 1rem;
-        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
     }
     
     .hero-description {
-        font-size: 0.85rem;
-        margin-bottom: 1rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.75rem;
     }
     
     .hero-actions {
@@ -1461,6 +1066,13 @@ section {
     }
     
     section {
-        padding: 30px 0;
+        padding: 1.5rem 0;
+    }
+}
+
+/* Hide desktop parallax on touch devices */
+@media (hover: none) {
+    .hero-profile-image {
+        transform: none !important;
     }
 }

@@ -92,8 +92,15 @@ Update `index.html` with your:
 2. **UPI Fraud Detector** - ML model with 94% accuracy for fraud detection
 3. **Fire & Smoke Detection** - CNN with ~97.8% accuracy for safety monitoring
 4. **Campus Emergency Tap** - Real-time emergency alert platform (AIET Ideathon 2025 winner)
-5. **Customer Segmentation** - RFM analysis on 50K+ records identifying top customers
-6. **Personal Expense Tracker** - Automated expense categorization with budget alerts
+5. **AI Course Assistant** - AI-powered learning support system with NLP and LLM
+6. **Customer Segmentation** - RFM analysis on 50K+ records identifying top customers
+7. **Movie Recommendation System** - Full-stack recommendation platform with 1M+ movies
+8. **Personal Expense Tracker** - Automated expense categorization with budget alerts
+9. **Sales Analytics Suite** - 6-page Power BI dashboard + automated ETL pipeline
+10. **Predictive Customer Churn Model** - ML classification with 89% accuracy
+11. **A/B Testing & Feature Evaluation** - Statistical testing for conversion optimization
+12. **Big Data Supply Chain Optimization** - PySpark analysis on 50GB+ logistics data
+13. **HR Attrition & Workforce Analytics** - Workforce analytics with 87% accuracy
 
 ## 🛠️ Setup & Installation
 

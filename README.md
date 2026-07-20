@@ -1,6 +1,6 @@
-# Hithesh D - Data Analyst Portfolio
+# Hithesh D — Data Analyst & ML Builder Portfolio
 
-A modern, responsive portfolio website showcasing data analytics, machine learning, and data engineering projects. Built with vanilla HTML, CSS, and JavaScript with a focus on performance, accessibility, and visual appeal.
+A modern, fully fluid and adaptive portfolio website showcasing data analytics, machine learning, and data engineering projects. Built with vanilla HTML, CSS, and JavaScript — designed to look perfect on any screen size from 320px phones to ultrawide monitors.
 
 ## 🌟 Features
 

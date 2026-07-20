@@ -88,21 +88,58 @@ document.addEventListener('DOMContentLoaded', function() {
     
     initializeTheme();
     
-    // === MOBILE MENU TOGGLE ===
+    // === MOBILE MENU TOGGLE WITH OVERLAY ===
     const hamburgerMenu = document.getElementById('hamburger');
     const navigationLinks = document.getElementById('nav-links');
+    const navOverlay = document.getElementById('nav-overlay');
     
-    if (hamburgerMenu && navigationLinks) {
+    function closeMobileMenu() {
+        navigationLinks.classList.remove('active');
+        hamburgerMenu.classList.remove('open');
+        navOverlay.classList.remove('active');
+        document.body.classList.remove('nav-open');
+    }
+    
+    function openMobileMenu() {
+        navigationLinks.classList.add('active');
+        hamburgerMenu.classList.add('open');
+        navOverlay.classList.add('active');
+        document.body.classList.add('nav-open');
+    }
+    
+    if (hamburgerMenu && navigationLinks && navOverlay) {
         hamburgerMenu.addEventListener('click', function() {
-            navigationLinks.classList.toggle('active');
-            hamburgerMenu.classList.toggle('open');
+            if (navigationLinks.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
         });
         
+        // Close menu when clicking overlay
+        navOverlay.addEventListener('click', function() {
+            closeMobileMenu();
+        });
+        
+        // Close menu when a link is clicked
         navigationLinks.querySelectorAll('a').forEach(function(link) {
             link.addEventListener('click', function() {
-                navigationLinks.classList.remove('active');
-                hamburgerMenu.classList.remove('open');
+                closeMobileMenu();
             });
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navigationLinks.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Handle window resize - close mobile menu on desktop
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 900) {
+                closeMobileMenu();
+            }
         });
     }
     

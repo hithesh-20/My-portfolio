@@ -1,22 +1,22 @@
-# Hithesh D — Data Analyst | Machine Learning Engineer | BI Specialist
+# Hithesh D — Data Analyst | Business Intelligence Specialist
 
-A modern, enterprise-grade portfolio website targeting multinational corporations (MNCs). Showcases data analytics, machine learning, business intelligence, and data engineering projects with a focus on business impact, scalability, and professional presentation. Built with vanilla HTML, CSS, and JavaScript — fully responsive from 320px mobile to ultrawide displays.
+A modern, enterprise-grade portfolio website targeting multinational corporations (MNCs). Showcases data analytics, business intelligence, and data engineering projects with a focus on business impact, data-driven insights, and professional presentation. Built with vanilla HTML, CSS, and JavaScript — fully responsive from 320px mobile to ultrawide displays.
 
 ## 🎯 Target Audience
 
 This portfolio is optimized for **recruiters and hiring managers at multinational corporations** (MNCs) including:
-- Top tech companies (Google, Microsoft, Amazon, Meta)
+- Top tech companies (Google, Microsoft, Amazon, Met
 - Financial institutions (Goldman Sachs, JPMorgan, Citi)
 - Consulting firms (Deloitte, PwC, EY, KPMG)
 - Product-based companies (Flipkart, Uber, Swiggy)
-- Enterprise analytics teams
+- Enterprise analytics & BI teams
 
 ## 🌟 Key Features
 
 ### 🔍 Enterprise-Ready Portfolio
-- **MNC-Targeted Keywords**: Strategic placement of enterprise buzzwords — ETL, Business Intelligence, Predictive Modeling, Stakeholder Reporting, KPI Tracking, Data-Driven Decision Making
+- **Analytics & BI Targeted Keywords**: Strategic placement of industry keywords — ETL, Business Intelligence, Data Visualization, KPI Dashboards, Stakeholder Reporting, Data-Driven Decision Making
 - **Quantified Impact**: Every project includes measurable business results ($500K revenue opportunity, 15+ hrs/week efficiency, 94% accuracy, etc.)
-- **Professional Wording**: Action-oriented language emphasizing business value, scalability, and enterprise readiness
+- **Professional Wording**: Action-oriented language emphasizing business value, data storytelling, and enterprise readiness
 
 ### ✨ Visual & Animation Features
 - **Scroll Reveal Animations** — Elements fade in smoothly as you scroll
@@ -47,7 +47,7 @@ This portfolio is optimized for **recruiters and hiring managers at multinationa
 
 ```
 My-portfolio/
-├── index.html      # Main HTML structure (SEO-optimized with MNC keywords)
+├── index.html      # Main HTML structure (SEO-optimized with Data Analytics & BI keywords)
 ├── style.css       # Complete styling with CSS variables
 ├── script.js       # All interactive functionality
 └── README.md       # This file
@@ -63,10 +63,10 @@ My-portfolio/
 
 ## ✨ Key Sections (MNC-Optimized)
 
-1. **Hero/About** — Professional introduction with quantified achievements ($500K revenue, 15+ hrs/week efficiency), enterprise language, and MNC target keywords
-2. **Skills** — Technical expertise categorized into Enterprise-relevant domains (Programming & Query Languages, Machine Learning & AI, Business Intelligence & Visualization, Data Engineering & Cloud)
-3. **Projects** — 11 enterprise-focused project cards with measurable business impact, industry-specific descriptions, and GitHub links
-4. **Resume** — Education and experience emphasizing enterprise analytics and business intelligence
+1. **Hero/About** — Professional introduction with quantified achievements ($500K revenue, 15+ hrs/week efficiency), analytics-focused language, and MNC target keywords
+2. **Skills** — Technical expertise categorized into Analytics domains (Data Analytics & Query Languages, Business Intelligence & Visualization, Data Engineering & ETL, Reporting & Web Technologies)
+3. **Projects** — 13 analytics-focused project cards with measurable business impact, industry-specific descriptions, and GitHub links
+4. **Resume** — Education and experience emphasizing data analytics and business intelligence
 5. **Certifications** — IBM, Google Cloud, University of Washington credentials
 6. **Contact/Footer** — Social links and MNC opportunity declaration
 
@@ -75,25 +75,26 @@ My-portfolio/
 The portfolio incorporates these high-value keywords for MNC recruiter search visibility:
 
 ### Core Keywords
-- Enterprise Analytics
+- Data Analytics
 - Business Intelligence (BI)
+- Data Visualization
 - Data-Driven Decision Making
 - ETL Pipeline Development
 - Stakeholder Reporting
-- Predictive Modeling
-- Machine Learning Engineering
-- Data Engineering
-- KPI Tracking & Dashboards
+- KPI Dashboards & Tracking
 - Statistical Analysis
+- Data Storytelling
+- Business Reporting
 
 ### Technical Keywords
-- Python, SQL, Power BI, Tableau
-- scikit-learn, TensorFlow, XGBoost
-- AWS, GCP, Apache Spark, Airflow
-- DAX, PySpark, BigQuery
-- Feature Engineering, A/B Testing
-- Regression, Classification, Clustering
-- NLP, LLM, RAG Architecture
+- Python (Pandas, NumPy, SciPy)
+- SQL (MySQL, PostgreSQL, BigQuery)
+- Power BI (DAX, Power Query)
+- Tableau • Excel • Looker Studio
+- AWS (S3, Athena, Lambda)
+- Google Cloud (BigQuery, Dataflow)
+- Apache Spark / PySpark • Airflow
+- A/B Testing • Cohort Analysis
 
 ### Business Impact Keywords
 - Revenue Opportunity ($500K)
@@ -135,20 +136,20 @@ Update `index.html` with your:
 - Project details (title, description, tech stack, links)
 - Social links (LinkedIn, GitHub, Email)
 
-### Enterprise Portfolio Projects
-1. **Loan Origination System** — Full-stack credit risk scoring for financial institutions
-2. **UPI Fraud Detection Engine** — 94% accuracy fraud detection for fintech
-3. **Fire & Smoke Detection (CNN)** — 97.8% accuracy environmental safety system
-4. **Campus Emergency Response Platform** — AIET Ideathon 2025 winner
-5. **AI-Powered Learning Assistant** — RAG architecture with LLM integration
-6. **Customer Segmentation & RFM Analytics** — 50K+ records, 68% revenue identified
-7. **Movie Recommendation Engine** — Collaborative & content-based filtering
-8. **Automated Expense Intelligence** — Workflow automation & financial reporting
-9. **Sales Analytics Suite** — 6-page Power BI dashboard + ETL pipeline ($500K opportunity)
-10. **Predictive Customer Churn Model** — 89% accuracy, 12% churn reduction projected
-11. **A/B Testing & Conversion Optimization** — 5% conversion lift validated
-12. **Big Data Supply Chain Optimization** — 50GB+ logistics, 10% cost reduction
-13. **HR Attrition & Workforce Analytics** — 87% accuracy, 15% turnover reduction
+### Analytics Portfolio Projects
+1. **Sales Analytics Suite** — 6-page Power BI dashboard + ETL pipeline ($500K opportunity)
+2. **Customer Segmentation & RFM Analytics** — 50K+ records, 68% revenue identified
+3. **Loan Origination System** — Analytics workflow for financial data processing
+4. **UPI Fraud Detection Analytics** — 94% accuracy data analytics solution
+5. **Campus Emergency Response Platform** — AIET Ideathon 2025 winner
+6. **A/B Testing & Conversion Analytics** — 5% conversion lift validated
+7. **Big Data Supply Chain Analytics** — 50GB+ logistics, 10% cost reduction
+8. **HR Attrition & Workforce Analytics** — 87% accuracy, 15% turnover reduction
+9. **Customer Churn Analysis & Retention Strategy** — 89% accuracy, 12% churn reduction
+10. **Automated Expense Intelligence** — Workflow automation & financial reporting
+11. **Fire & Smoke Detection Analytics** — 97.8% accuracy data-driven solution
+12. **Movie Recommendation & Analytics Platform** — 1M+ catalog, data-driven filtering
+13. **AI-Powered Learning Analytics Assistant** — NLP & semantic search
 
 ## 🛠️ Setup & Installation
 

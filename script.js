@@ -125,6 +125,52 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+        // === TYPEWRITER EFFECT ===
+    function initTypewriter() {
+        const typewriteEl = document.querySelector('.typewrite');
+        if (!typewriteEl) return;
+        
+        const dataWords = typewriteEl.getAttribute('data-words');
+        const period = parseInt(typewriteEl.getAttribute('data-period')) || 2000;
+        const words = JSON.parse(dataWords);
+        let txt = '';
+        let wordIndex = 0;
+        let isDeleting = false;
+        
+        function type() {
+            const currentWord = words[wordIndex];
+            
+            if (isDeleting) {
+                txt = currentWord.substring(0, txt.length - 1);
+            } else {
+                txt = currentWord.substring(0, txt.length + 1);
+            }
+            
+            typewriteEl.innerHTML = txt;
+            
+            let typeSpeed = 100;
+            
+            if (isDeleting) {
+                typeSpeed /= 2;
+            }
+            
+            if (!isDeleting && txt === currentWord) {
+                typeSpeed = period;
+                isDeleting = true;
+            } else if (isDeleting && txt === '') {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                typeSpeed = 200;
+            }
+            
+            setTimeout(type, typeSpeed);
+        }
+        
+        type();
+    }
+    
+    initTypewriter();
+    
     // === SMOOTH SCROLLING ===
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(event) {

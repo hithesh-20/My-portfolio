@@ -382,6 +382,46 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// === CONTACT FORM HANDLER ===
+function handleFormSubmit(event) {
+    event.preventDefault();
+    const form = document.getElementById('contact-form');
+    const btn = document.getElementById('form-submit-btn');
+    const status = document.getElementById('form-status');
+    
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    status.style.display = 'none';
+    
+    fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(function(response) {
+        if (response.ok) {
+            status.textContent = '✅ Message sent! I\'ll get back to you soon.';
+            status.style.color = '#10b981';
+            form.reset();
+        } else {
+            status.textContent = '❌ Something went wrong. Please email me directly.';
+            status.style.color = '#ef4444';
+        }
+        status.style.display = 'block';
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>';
+    })
+    .catch(function() {
+        status.textContent = '❌ Network error. Please email me at hitheshkowshik@gmail.com';
+        status.style.color = '#ef4444';
+        status.style.display = 'block';
+        btn.disabled = false;
+        btn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>';
+    });
+    
+    return false;
+}
+
 // Smooth scroll fallback for older browsers
 (function() {
     if ('scrollBehavior' in document.documentElement.style) {

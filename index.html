@@ -30,6 +30,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="https://linkedin.com/in/hithesh-d-8802a630b" target="_blank" rel="noopener noreferrer">Connect</a></li>
                 </ul>
@@ -64,8 +65,8 @@
                                 <span class="stat-label">Hours/Week Reporting Saved</span>
                             </div>
                             <div class="stat-item">
-                                <span class="stat-number">13</span>
-                                <span class="stat-label">Data Projects Delivered</span>
+                                <span class="stat-number">50K+</span>
+                                <span class="stat-label">Transaction Records Analyzed</span>
                             </div>
                         </div>
                         <div class="hero-actions">
@@ -95,7 +96,7 @@
                         <h3>Data Analysis</h3>
                         <ul class="skill-list">
                             <li><span class="skill-name">Python (Pandas, NumPy)</span><span class="skill-bar"><span class="skill-fill" style="width:85%"></span></span></li>
-                            <li><span class="skill-name">SQL</span><span class="skill-bar"><span class="skill-fill" style="width:90%"></span></span></li>
+                            <li><span class="skill-name">SQL (MySQL, BigQuery)</span><span class="skill-bar"><span class="skill-fill" style="width:90%"></span></span></li>
                             <li><span class="skill-name">Excel (PivotTables, VBA)</span><span class="skill-bar"><span class="skill-fill" style="width:80%"></span></span></li>
                             <li><span class="skill-name">Statistical Analysis</span><span class="skill-bar"><span class="skill-fill" style="width:75%"></span></span></li>
                         </ul>
@@ -193,7 +194,7 @@
                     <article class="project-card reveal interactive-card">
                         <h3 class="project-title">A/B Testing Analytics</h3>
                         <p class="project-tech">SciPy • Statsmodels • SQL</p>
-                        <p>Statistical testing validated 5% conversion increase with 95% confidence for e-commerce checkout.</p>
+                        <p>Statistical testing validated 5% conversion increase with 95% confidence for e-commerce.</p>
                         <div class="project-results">
                             <span class="result-badge">📈 5% Conversion Lift</span>
                             <span class="result-badge">✅ 95% Confidence</span>
@@ -277,21 +278,66 @@
             </div>
         </section>
 
+        <section id="resume" class="skills-section interactive-section" aria-label="Resume and education">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-eyebrow">Professional Journey</p>
+                    <h2 class="section-title">Experience & <span class="accent">Education</span></h2>
+                </div>
+                <div class="resume-grid">
+                    <div class="resume-card reveal interactive-card">
+                        <h3>Education</h3>
+                        <p><strong>B.Tech Computer Science & Engineering</strong><br>2023 – 2027<br>Focus: Data Analytics, Business Intelligence. Coursework: DBMS, Statistical Analysis, DSA, Cloud Computing.</p>
+                        <span class="year-badge">2023–2027</span>
+                        <p style="margin-top: 1rem;"><strong>PUC — Science Stream</strong><br>JSS PU College, Mysuru</p>
+                        <span class="year-badge">2021–2023</span>
+                        <p style="margin-top: 1rem;"><strong>SSLC (77%)</strong><br>Rotary Midtown Academy, Mysuru</p>
+                        <span class="year-badge">2021</span>
+                    </div>
+                    <div class="resume-card reveal interactive-card">
+                        <h3>Experience</h3>
+                        <p><strong>Data Analytics Intern</strong><br>2025<br>Data cleaning, ETL, dashboard development, stakeholder reporting using Power BI and Python.</p>
+                        <p><strong>BI Developer (Freelance)</strong><br>2025 – Present<br>End-to-end BI solutions: ETL pipelines, Power BI dashboards, KPI tracking.</p>
+                        <p><strong>Data Analytics Contributor</strong><br>2024 – Present<br>Customer segmentation, sales analytics, churn analysis, workforce analytics.</p>
+                        <span class="year-badge">2024–Present</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="skills-section interactive-section" aria-label="Certifications">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-eyebrow">Credentials</p>
+                    <h2 class="section-title">Professional <span class="accent">Development</span></h2>
+                </div>
+                <div class="certifications-grid">
+                    <div class="cert-item interactive-card reveal"><h4>Data Analytics Specialization</h4><p><strong>U of Washington</strong> • 2026 • 4 capstone projects</p></div>
+                    <div class="cert-item interactive-card reveal"><h4>Google Cloud Data Engineering</h4><p><strong>Google Cloud</strong> • 2025 • BigQuery, ETL, cloud warehousing</p></div>
+                    <div class="cert-item interactive-card reveal"><h4>Software Engineering</h4><p><strong>IBM</strong> • 2025 • Git, CI/CD, Agile</p></div>
+                    <div class="cert-item interactive-card reveal"><h4>Web Development</h4><p><strong>IBM</strong> • 2025 • HTML/CSS/JS, responsive design</p></div>
+                </div>
+            </div>
+        </section>
+
         <section id="contact" class="contact-section interactive-section" aria-label="Contact">
             <div class="container">
                 <div class="contact-content reveal interactive-content">
                     <h2>Let's <span class="accent">Connect</span></h2>
                     <p>Open to data analytics and BI roles at MNCs. Available for internships and full-time opportunities.</p>
                     
-                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/xrbekvqw" method="POST">
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/xrbekvqw" method="POST" onsubmit="return handleFormSubmit(event)">
+                        <input type="hidden" name="_subject" value="Portfolio Contact">
+                        <input type="hidden" name="_next" value="https://hithesh-20.github.io/My-portfolio/">
                         <div class="form-row">
                             <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
                             <input type="email" name="email" placeholder="Your Email" required aria-label="Your email">
                         </div>
                         <input type="text" name="subject" placeholder="Subject" required aria-label="Subject">
                         <textarea name="message" placeholder="Your Message" rows="4" required aria-label="Your message"></textarea>
-                        <button type="submit" class="btn primary-btn">Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+                        <button type="submit" class="btn primary-btn" id="form-submit-btn">Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
                     </form>
+                    <p id="form-status" style="margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
                     
                     <div class="social-links" style="margin-top: 2rem;">
                         <a href="https://linkedin.com/in/hithesh-d-8802a630b" class="social-link interactive-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
@@ -311,6 +357,5 @@
     </footer>
 
     <script src="script.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
 </body>
 </html>

@@ -1,16 +1,30 @@
-# Hithesh D — Data Analyst & ML Builder Portfolio
+# Hithesh D — Data Analyst | Machine Learning Engineer | BI Specialist
 
-A modern, fully fluid and adaptive portfolio website showcasing data analytics, machine learning, and data engineering projects. Built with vanilla HTML, CSS, and JavaScript — designed to look perfect on any screen size from 320px phones to ultrawide monitors.
+A modern, enterprise-grade portfolio website targeting multinational corporations (MNCs). Showcases data analytics, machine learning, business intelligence, and data engineering projects with a focus on business impact, scalability, and professional presentation. Built with vanilla HTML, CSS, and JavaScript — fully responsive from 320px mobile to ultrawide displays.
 
-## 🌟 Features
+## 🎯 Target Audience
+
+This portfolio is optimized for **recruiters and hiring managers at multinational corporations** (MNCs) including:
+- Top tech companies (Google, Microsoft, Amazon, Meta)
+- Financial institutions (Goldman Sachs, JPMorgan, Citi)
+- Consulting firms (Deloitte, PwC, EY, KPMG)
+- Product-based companies (Flipkart, Uber, Swiggy)
+- Enterprise analytics teams
+
+## 🌟 Key Features
+
+### 🔍 Enterprise-Ready Portfolio
+- **MNC-Targeted Keywords**: Strategic placement of enterprise buzzwords — ETL, Business Intelligence, Predictive Modeling, Stakeholder Reporting, KPI Tracking, Data-Driven Decision Making
+- **Quantified Impact**: Every project includes measurable business results ($500K revenue opportunity, 15+ hrs/week efficiency, 94% accuracy, etc.)
+- **Professional Wording**: Action-oriented language emphasizing business value, scalability, and enterprise readiness
 
 ### ✨ Visual & Animation Features
-- **Scroll Reveal Animations** - Elements fade in smoothly as you scroll
-- **Smooth Scroll Progress Bar** - Visual indicator at the top of the page
-- **Interactive Hover Effects** - Cards lift and transform on hover
-- **Ripple Button Effects** - Click animations on buttons
-- **Parallax Hero Image** - Subtle 3D tilt effect on profile image
-- **Section Highlights** - Animated borders when navigating to sections
+- **Scroll Reveal Animations** — Elements fade in smoothly as you scroll
+- **Smooth Scroll Progress Bar** — Visual indicator at the top of the page
+- **Interactive Hover Effects** — Cards lift and transform on hover
+- **Ripple Button Effects** — Click animations on buttons
+- **Parallax Hero Image** — Subtle 3D tilt effect on profile image
+- **Section Highlights** — Animated borders when navigating to sections
 
 ### 🎨 Design Features
 - **Modern Forbes-inspired Design**: Clean, professional aesthetic with Playfair Display typography and Inter for UI
@@ -20,10 +34,10 @@ A modern, fully fluid and adaptive portfolio website showcasing data analytics, 
 - **Performance**: Vanilla JS (no frameworks), CSS custom properties, optimized animations
 
 ### 🚀 Interactive Elements
-- **Mobile Menu Toggle** - Hamburger menu with smooth transitions
-- **Theme Toggle** - Animated sun/moon icon rotation on theme switch (top-right corner)
-- **Smooth Scrolling** - Smooth anchor link navigation
-- **Interactive Cards** - Skill and project cards with hover animations
+- **Mobile Menu Toggle** — Hamburger menu with smooth transitions
+- **Theme Toggle** — Animated sun/moon icon rotation on theme switch (top-right corner)
+- **Smooth Scrolling** — Smooth anchor link navigation
+- **Interactive Cards** — Skill and project cards with hover animations
 
 ## 🚀 Live Demo
 
@@ -33,7 +47,7 @@ A modern, fully fluid and adaptive portfolio website showcasing data analytics, 
 
 ```
 My-portfolio/
-├── index.html      # Main HTML structure
+├── index.html      # Main HTML structure (SEO-optimized with MNC keywords)
 ├── style.css       # Complete styling with CSS variables
 ├── script.js       # All interactive functionality
 └── README.md       # This file
@@ -41,19 +55,53 @@ My-portfolio/
 
 ## 🛠️ Tech Stack
 
-- **HTML5** - Semantic markup
-- **CSS3** - Custom properties, Grid/Flexbox, animations, media queries
-- **Vanilla JavaScript (ES6+)** - IntersectionObserver, localStorage, smooth scroll
-- **Font Awesome 6.4** - Icons
-- **Google Fonts** - Playfair Display & Inter
+- **HTML5** — Semantic markup with SEO meta tags and Open Graph protocol
+- **CSS3** — Custom properties, Grid/Flexbox, animations, media queries
+- **Vanilla JavaScript (ES6+)** — IntersectionObserver, localStorage, smooth scroll
+- **Font Awesome 6.4** — Icons
+- **Google Fonts** — Playfair Display & Inter
 
-## ✨ Key Sections
+## ✨ Key Sections (MNC-Optimized)
 
-1. **Hero/About** - Professional introduction with profile image
-2. **Skills** - Technical expertise categorized by domain
-3. **Projects** - Featured project cards with tech stacks and GitHub links
-4. **Resume** - Education, Experience, and Certifications
-5. **Contact/Footer** - Social links and contact information
+1. **Hero/About** — Professional introduction with quantified achievements ($500K revenue, 15+ hrs/week efficiency), enterprise language, and MNC target keywords
+2. **Skills** — Technical expertise categorized into Enterprise-relevant domains (Programming & Query Languages, Machine Learning & AI, Business Intelligence & Visualization, Data Engineering & Cloud)
+3. **Projects** — 11 enterprise-focused project cards with measurable business impact, industry-specific descriptions, and GitHub links
+4. **Resume** — Education and experience emphasizing enterprise analytics and business intelligence
+5. **Certifications** — IBM, Google Cloud, University of Washington credentials
+6. **Contact/Footer** — Social links and MNC opportunity declaration
+
+## 🏢 Enterprise Keyword Strategy
+
+The portfolio incorporates these high-value keywords for MNC recruiter search visibility:
+
+### Core Keywords
+- Enterprise Analytics
+- Business Intelligence (BI)
+- Data-Driven Decision Making
+- ETL Pipeline Development
+- Stakeholder Reporting
+- Predictive Modeling
+- Machine Learning Engineering
+- Data Engineering
+- KPI Tracking & Dashboards
+- Statistical Analysis
+
+### Technical Keywords
+- Python, SQL, Power BI, Tableau
+- scikit-learn, TensorFlow, XGBoost
+- AWS, GCP, Apache Spark, Airflow
+- DAX, PySpark, BigQuery
+- Feature Engineering, A/B Testing
+- Regression, Classification, Clustering
+- NLP, LLM, RAG Architecture
+
+### Business Impact Keywords
+- Revenue Opportunity ($500K)
+- Efficiency Gains (15+ hrs/week)
+- Accuracy Metrics (94%, 89%, 87%)
+- Cost Reduction (10%)
+- Churn Reduction (12-15%)
+- Conversion Optimization (5% increase)
 
 ## 🎨 Customization
 
@@ -87,20 +135,20 @@ Update `index.html` with your:
 - Project details (title, description, tech stack, links)
 - Social links (LinkedIn, GitHub, Email)
 
-### Featured Projects
-1. **Loan Origination System** - Full-stack loan application workflow with credit risk scoring
-2. **UPI Fraud Detector** - ML model with 94% accuracy for fraud detection
-3. **Fire & Smoke Detection** - CNN with ~97.8% accuracy for safety monitoring
-4. **Campus Emergency Tap** - Real-time emergency alert platform (AIET Ideathon 2025 winner)
-5. **AI Course Assistant** - AI-powered learning support system with NLP and LLM
-6. **Customer Segmentation** - RFM analysis on 50K+ records identifying top customers
-7. **Movie Recommendation System** - Full-stack recommendation platform with 1M+ movies
-8. **Personal Expense Tracker** - Automated expense categorization with budget alerts
-9. **Sales Analytics Suite** - 6-page Power BI dashboard + automated ETL pipeline
-10. **Predictive Customer Churn Model** - ML classification with 89% accuracy
-11. **A/B Testing & Feature Evaluation** - Statistical testing for conversion optimization
-12. **Big Data Supply Chain Optimization** - PySpark analysis on 50GB+ logistics data
-13. **HR Attrition & Workforce Analytics** - Workforce analytics with 87% accuracy
+### Enterprise Portfolio Projects
+1. **Loan Origination System** — Full-stack credit risk scoring for financial institutions
+2. **UPI Fraud Detection Engine** — 94% accuracy fraud detection for fintech
+3. **Fire & Smoke Detection (CNN)** — 97.8% accuracy environmental safety system
+4. **Campus Emergency Response Platform** — AIET Ideathon 2025 winner
+5. **AI-Powered Learning Assistant** — RAG architecture with LLM integration
+6. **Customer Segmentation & RFM Analytics** — 50K+ records, 68% revenue identified
+7. **Movie Recommendation Engine** — Collaborative & content-based filtering
+8. **Automated Expense Intelligence** — Workflow automation & financial reporting
+9. **Sales Analytics Suite** — 6-page Power BI dashboard + ETL pipeline ($500K opportunity)
+10. **Predictive Customer Churn Model** — 89% accuracy, 12% churn reduction projected
+11. **A/B Testing & Conversion Optimization** — 5% conversion lift validated
+12. **Big Data Supply Chain Optimization** — 50GB+ logistics, 10% cost reduction
+13. **HR Attrition & Workforce Analytics** — 87% accuracy, 15% turnover reduction
 
 ## 🛠️ Setup & Installation
 
@@ -109,7 +157,7 @@ Update `index.html` with your:
 - A web browser (for viewing the portfolio)
 - VS Code (recommended) with Live Server extension for local development
 
-### Access from Anywhere - GitHub Commands
+### Access from Anywhere — GitHub Commands
 
 #### Initial Setup
 ```bash
@@ -193,7 +241,7 @@ Drag and drop the folder or connect your Git repo for automatic deployments.
 
 ## 📄 License
 
-MIT License - feel free to use this as a template for your own portfolio!
+MIT License — feel free to use this as a template for your own portfolio!
 
 ## 🤝 Connect
 
@@ -203,4 +251,4 @@ MIT License - feel free to use this as a template for your own portfolio!
 
 ---
 
-Built with ❤️ by Hithesh D
+Built with ❤️ by Hithesh D — Open to MNC Opportunities

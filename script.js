@@ -1,9 +1,8 @@
 // ==========================================
 // Hithesh Portfolio Scripts
-// Clean, human-readable code for interactive features
+// Performance-optimized, accessible JS
 // ==========================================
 
-// Wait for the page to load before running scripts
 document.addEventListener('DOMContentLoaded', function() {
     
     // === REVEAL ANIMATION ON SCROLL ===
@@ -29,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const htmlElement = document.documentElement;
     const THEME_STORAGE_KEY = 'portfolio-theme';
     
-    // Initialize theme on page load
     function initializeTheme() {
         const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
         const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -43,43 +41,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Apply theme to the page and update the toggle button icon
     function applyTheme(themeName) {
         htmlElement.setAttribute('data-theme', themeName);
         
-        // Update button icon based on theme
         if (themeToggleBtn) {
-            if (themeName === 'dark') {
-                themeToggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-            } else {
-                themeToggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-            }
+            themeToggleBtn.innerHTML = themeName === 'dark'
+                ? '<i class="fa-solid fa-sun" aria-hidden="true"></i>'
+                : '<i class="fa-solid fa-moon" aria-hidden="true"></i>';
         }
     }
     
-    // Switch between light and dark themes
     function toggleTheme() {
         const currentTheme = htmlElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
         
-        htmlElement.classList.add('theme-transitioning');
         applyTheme(newTheme);
         localStorage.setItem(THEME_STORAGE_KEY, newTheme);
         
-        // Add pulse effect on theme change
         document.body.classList.add('theme-changed');
         setTimeout(function() {
             document.body.classList.remove('theme-changed');
-            htmlElement.classList.remove('theme-transitioning');
         }, 500);
     }
     
-    // Add click handler for theme toggle button
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', toggleTheme);
     }
     
-    // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(event) {
         if (!localStorage.getItem(THEME_STORAGE_KEY)) {
             applyTheme(event.matches ? 'dark' : 'light');
@@ -88,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     initializeTheme();
     
-    // === MOBILE MENU TOGGLE WITH OVERLAY ===
+    // === MOBILE MENU TOGGLE ===
     const hamburgerMenu = document.getElementById('hamburger');
     const navigationLinks = document.getElementById('nav-links');
     const navOverlay = document.getElementById('nav-overlay');
@@ -96,6 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeMobileMenu() {
         navigationLinks.classList.remove('active');
         hamburgerMenu.classList.remove('open');
+        hamburgerMenu.setAttribute('aria-expanded', 'false');
         navOverlay.classList.remove('active');
         document.body.classList.remove('nav-open');
     }
@@ -103,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function openMobileMenu() {
         navigationLinks.classList.add('active');
         hamburgerMenu.classList.add('open');
+        hamburgerMenu.setAttribute('aria-expanded', 'true');
         navOverlay.classList.add('active');
         document.body.classList.add('nav-open');
     }
@@ -116,26 +106,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Close menu when clicking overlay
-        navOverlay.addEventListener('click', function() {
-            closeMobileMenu();
-        });
+        navOverlay.addEventListener('click', closeMobileMenu);
         
-        // Close menu when a link is clicked
         navigationLinks.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                closeMobileMenu();
-            });
+            link.addEventListener('click', closeMobileMenu);
         });
         
-        // Close menu on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && navigationLinks.classList.contains('active')) {
                 closeMobileMenu();
             }
         });
         
-        // Handle window resize - close mobile menu on desktop
         window.addEventListener('resize', function() {
             if (window.innerWidth >= 900) {
                 closeMobileMenu();
@@ -143,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // === SMOOTH SCROLLING FOR ANCHOR LINKS ===
+    // === SMOOTH SCROLLING ===
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function(event) {
             const targetId = this.getAttribute('href');
@@ -163,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     behavior: 'smooth'
                 });
                 
-                // Add highlight effect to the target section
                 targetElement.classList.add('section-highlight');
                 setTimeout(function() {
                     targetElement.classList.remove('section-highlight');
@@ -172,21 +153,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // === SCROLL PROGRESS BAR ===
+    // === SCROLL PROGRESS BAR (throttled) ===
     function createScrollProgressBar() {
         const progressBar = document.createElement('div');
-        
-        // Theme-aware progress bar color
-        const updateProgressBarColor = function() {
-            const isDark = htmlElement.getAttribute('data-theme') === 'dark';
-            progressBar.style.background = isDark ? '#ffffff' : '#000000';
-        };
-        
-        // Initial set
-        updateProgressBarColor();
-        
-        // Update on theme change
-        htmlElement.addEventListener('theme-changed', updateProgressBarColor);
         
         progressBar.style.cssText = 
             'position: fixed;' +
@@ -195,43 +164,45 @@ document.addEventListener('DOMContentLoaded', function() {
             'width: 0%;' +
             'height: 3px;' +
             'z-index: 9999;' +
-            'transition: width 0.1s;';
+            'background: #000000;' +
+            'transition: width 0.1s linear;';
         
         document.body.appendChild(progressBar);
         
+        // Update progress bar color on theme toggle
+        function updateProgressBarColor() {
+            const isDark = htmlElement.getAttribute('data-theme') === 'dark';
+            progressBar.style.background = isDark ? '#ffffff' : '#000000';
+        }
+        
+        // Throttled scroll handler - limits to ~30fps
+        let ticking = false;
         window.addEventListener('scroll', function() {
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const documentHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (scrollTop / documentHeight) * 100;
-            
-            progressBar.style.width = scrollPercent + '%';
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+                    const documentHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrollPercent = documentHeight > 0 ? (scrollTop / documentHeight) * 100 : 0;
+                    
+                    progressBar.style.width = scrollPercent + '%';
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
+        
+        // Watch for theme changes
+        const themeObserver = new MutationObserver(function() {
+            updateProgressBarColor();
+        });
+        themeObserver.observe(htmlElement, { attributes: true, attributeFilter: ['data-theme'] });
+        
+        updateProgressBarColor();
     }
     
     createScrollProgressBar();
     
-    // === INTERACTIVE CARD EFFECTS ===
-    const cards = document.querySelectorAll('.interactive-card, .skill-category-card, .project-card, .resume-card');
-    
-    const updateCardEffect = function(card) {
-        const isDark = htmlElement.getAttribute('data-theme') === 'dark';
-        const shadowAlpha = isDark ? 0.15 : 0.12;
-        card.style.boxShadow = '0 15px 50px rgba(0, 0, 0, ' + shadowAlpha + ')';
-    };
-    
-    cards.forEach(function(card) {
-        card.addEventListener('mouseenter', function() {
-            card.style.transform = 'translateY(-8px) scale(1.02)';
-            updateCardEffect(card);
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            card.style.transform = '';
-            card.style.boxShadow = '';
-        });
-    });
-    
-    // === SECTION HIGHLIGHT ON SCROLL ===
+    // === SECTION ACTIVE OBSERVER ===
     const sections = document.querySelectorAll('.interactive-section');
     
     const sectionObserver = new IntersectionObserver(function(entries) {
@@ -250,19 +221,17 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionObserver.observe(section);
     });
     
-    // === BUTTON INTERACTIONS ===
+    // === BUTTON RIPPLES ===
     const buttons = document.querySelectorAll('.interactive-btn, .primary-btn, .outline-btn');
     
     buttons.forEach(function(btn) {
         btn.addEventListener('click', function(e) {
-            // Create ripple effect
             const ripple = document.createElement('span');
             const rect = btn.getBoundingClientRect();
             const size = Math.max(rect.width, rect.height);
             const x = e.clientX - rect.left - size / 2;
             const y = e.clientY - rect.top - size / 2;
             
-            // Theme-aware ripple color
             const isDark = htmlElement.getAttribute('data-theme') === 'dark';
             const rippleColor = isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)';
             
@@ -275,7 +244,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 'background: ' + rippleColor + ';' +
                 'border-radius: 50%;' +
                 'transform: scale(0);' +
-                'animation: ripple 0.6s ease-out;';
+                'animation: ripple 0.6s ease-out;' +
+                'pointer-events: none;';
             
             btn.style.position = 'relative';
             btn.style.overflow = 'hidden';
@@ -287,35 +257,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // === PARALLAX EFFECT FOR HERO IMAGE ===
+    // === PARALLAX EFFECT (desktop only, throttled) ===
     const heroImage = document.querySelector('.hero-profile-image');
-    if (heroImage) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (heroImage && !prefersReducedMotion && window.matchMedia('(hover: hover)').matches) {
+        let ticking = false;
         window.addEventListener('mousemove', function(e) {
-            const x = (e.clientX / window.innerWidth - 0.5) * 20;
-            const y = (e.clientY / window.innerHeight - 0.5) * 20;
-            heroImage.style.transform = 'scale(1.02) rotateX(' + y + 'deg) rotateY(' + x + 'deg)';
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    const x = (e.clientX / window.innerWidth - 0.5) * 20;
+                    const y = (e.clientY / window.innerHeight - 0.5) * 20;
+                    heroImage.style.transform = 'scale(1.02) rotateX(' + y + 'deg) rotateY(' + x + 'deg)';
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
     }
     
-    // === RESPONSIVE IMAGE ADJUSTMENTS ===
-    function adjustHeroImageForScreen() {
-        const heroImg = document.querySelector('.hero-profile-image');
-        
-        if (heroImg) {
-            const isDarkTheme = htmlElement.getAttribute('data-theme') === 'dark';
-            
-            if (isDarkTheme) {
-                heroImg.style.borderRadius = '4px';
-            }
-        }
-    }
-    
-    window.addEventListener('resize', adjustHeroImageForScreen);
-    adjustHeroImageForScreen();
-    
 });
 
-// Add CSS for ripple animation dynamically
+// Add CSS for ripple animation and focus styles dynamically
 const style = document.createElement('style');
 style.textContent = `
     @keyframes ripple {
@@ -344,6 +307,32 @@ style.textContent = `
         50% { filter: brightness(1.1); }
         100% { filter: brightness(1); }
     }
+
+    /* Focus-visible styles for keyboard users */
+    a:focus-visible,
+    button:focus-visible,
+    .project-link:focus-visible,
+    .social-link:focus-visible {
+        outline: 2px solid #000;
+        outline-offset: 3px;
+        border-radius: 2px;
+    }
+
+    [data-theme="dark"] a:focus-visible,
+    [data-theme="dark"] button:focus-visible,
+    [data-theme="dark"] .project-link:focus-visible,
+    [data-theme="dark"] .social-link:focus-visible {
+        outline-color: #fff;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+    }
 `;
 document.head.appendChild(style);
 
@@ -362,7 +351,6 @@ document.head.appendChild(style);
             if (targetElement) {
                 event.preventDefault();
                 const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
-                
                 window.scrollTo(0, targetPosition);
             }
         });

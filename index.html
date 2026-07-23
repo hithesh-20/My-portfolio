@@ -3,359 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hithesh D — Data Analyst | Business Intelligence Specialist</title>
-    <meta name="description" content="Hithesh D — Computer Science student building data analytics solutions and BI dashboards for enterprise decision-making.">
-    <meta name="keywords" content="Data Analyst, Business Intelligence, Power BI, Python, SQL, Data Visualization, Portfolio, Hithesh D, ETL, Enterprise Analytics, Excel, Tableau">
+    <title>Hithesh D — Data Analyst</title>
+    <meta name="description" content="Hithesh D — Computer Science student building data analytics and BI dashboards.">
     <meta name="author" content="Hithesh D">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Hithesh D — Data Analyst & BI Specialist Portfolio">
-    <meta property="og:description" content="Enterprise data analytics and business intelligence — targeting MNC roles.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://hithesh-20.github.io/My-portfolio/">
     <link rel="canonical" href="https://hithesh-20.github.io/My-portfolio/">
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
 </head>
 <body>
 
-    <header class="navbar" id="navbar" role="banner">
+    <header class="navbar" id="navbar">
         <div class="container nav-content">
-            <a href="#" class="logo" aria-label="Hithesh D Home">Hithesh</a>
-            <nav aria-label="Main navigation">
+            <a href="#" class="logo">Hithesh</a>
+            <nav>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="#work">Work</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://linkedin.com/in/hithesh-d-8802a630b" target="_blank" rel="noopener noreferrer">Connect</a></li>
                 </ul>
             </nav>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            <button class="theme-toggle" id="theme-toggle" aria-label="Dark mode"><i class="fa-solid fa-moon"></i></button>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
             </button>
         </div>
-        <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
+        <div class="nav-overlay" id="nav-overlay"></div>
     </header>
 
-    <main id="main-content">
-        <section id="about" class="hero interactive-section" aria-label="About Hithesh D">
+    <main>
+        <section id="about" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <div class="hero-text reveal">
-                        <p class="hero-eyebrow">Data Analyst · BI Specialist · Student (2023–2027)</p>
+                    <div class="hero-text">
+                        <p class="hero-eyebrow">Data Analyst · BI Student · 2027</p>
                         <h1 class="hero-name">Hithesh D</h1>
-                        <h2 class="hero-title">Data to <span class="typewrite" data-period="2000" data-words='["Business Impact","Actionable Insights","Strategic Decisions"]'></span></h2>
-                        <p class="hero-description">
-                            Turning raw data into business insights through analytics, automated reporting, and dashboards. 
-                            B.Tech CS student driving data-informed decisions for MNCs.
+                        <p class="hero-desc">
+                            I'm a CS student who likes working with data — cleaning it, finding patterns, and building dashboards that actually help people make decisions. Currently looking for internship opportunities where I can learn and contribute.
                         </p>
-                        <div class="hero-stats">
-                            <div class="stat-item">
-                                <span class="stat-number">$500K</span>
-                                <span class="stat-label">Revenue Opportunity Identified</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">15+</span>
-                                <span class="stat-label">Hours/Week Reporting Saved</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-number">50K+</span>
-                                <span class="stat-label">Transaction Records Analyzed</span>
-                            </div>
-                        </div>
-                        <div class="hero-actions">
-                            <a href="#projects" class="btn primary-btn interactive-btn">View Projects</a>
-                            <a href="#contact" class="btn outline-btn interactive-btn">Contact Me</a>
-                            <a href="https://github.com/hithesh-20" class="btn outline-btn interactive-btn" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
+                        <div class="hero-links">
+                            <a href="#work" class="btn">See my work</a>
+                            <a href="#contact" class="btn btn-outline">Say hi</a>
                         </div>
                     </div>
-                    <div class="hero-image-container reveal interactive-element">
-                        <div class="hero-image">
-                            <img src="hithkoush.png" alt="Portrait of Hithesh D — Data Analyst" class="hero-profile-image" loading="eager">
-                        </div>
-                        <div class="image-badge interactive-badge" aria-hidden="true">Open to Work</div>
+                    <div class="hero-image-wrap">
+                        <img src="hithkoush.png" alt="Hithesh D" class="hero-img">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="skills-section interactive-section" aria-label="Skills and competencies">
+        <section id="skills" class="section alt">
             <div class="container">
-                <div class="section-header reveal">
-                    <p class="section-eyebrow">Technical Expertise</p>
-                    <h2 class="section-title">Core <span class="accent">Competencies</span></h2>
+                <div class="section-head">
+                    <span class="label">What I use</span>
+                    <h2>Skills & Tools</h2>
                 </div>
-                <div class="skills-showcase">
-                    <div class="skill-category-card reveal interactive-card">
-                        <h3>Data Analysis</h3>
-                        <ul class="skill-list">
-                            <li><span class="skill-name">Python (Pandas, NumPy)</span><span class="skill-bar"><span class="skill-fill" style="width:85%"></span></span></li>
-                            <li><span class="skill-name">SQL (MySQL, BigQuery)</span><span class="skill-bar"><span class="skill-fill" style="width:90%"></span></span></li>
-                            <li><span class="skill-name">Excel (PivotTables, VBA)</span><span class="skill-bar"><span class="skill-fill" style="width:80%"></span></span></li>
-                            <li><span class="skill-name">Statistical Analysis</span><span class="skill-bar"><span class="skill-fill" style="width:75%"></span></span></li>
-                        </ul>
+                <div class="skill-grid">
+                    <div class="skill-card">
+                        <h3>Analysis & Queries</h3>
+                        <p>Python (Pandas, NumPy) · SQL · Excel (PivotTables, VBA) · Stats</p>
                     </div>
-                    <div class="skill-category-card reveal interactive-card">
-                        <h3>Business Intelligence</h3>
-                        <ul class="skill-list">
-                            <li><span class="skill-name">Power BI (DAX, Power Query)</span><span class="skill-bar"><span class="skill-fill" style="width:90%"></span></span></li>
-                            <li><span class="skill-name">Tableau</span><span class="skill-bar"><span class="skill-fill" style="width:75%"></span></span></li>
-                            <li><span class="skill-name">Looker Studio</span><span class="skill-bar"><span class="skill-fill" style="width:70%"></span></span></li>
-                            <li><span class="skill-name">KPI Dashboard Design</span><span class="skill-bar"><span class="skill-fill" style="width:85%"></span></span></li>
-                        </ul>
+                    <div class="skill-card">
+                        <h3>Dashboards & BI</h3>
+                        <p>Power BI (DAX, Power Query) · Tableau · Looker Studio · KPI design</p>
                     </div>
-                    <div class="skill-category-card reveal interactive-card">
-                        <h3>Data Engineering</h3>
-                        <ul class="skill-list">
-                            <li><span class="skill-name">ETL Pipelines</span><span class="skill-bar"><span class="skill-fill" style="width:80%"></span></span></li>
-                            <li><span class="skill-name">Data Warehousing</span><span class="skill-bar"><span class="skill-fill" style="width:70%"></span></span></li>
-                            <li><span class="skill-name">Automated Reporting</span><span class="skill-bar"><span class="skill-fill" style="width:85%"></span></span></li>
-                            <li><span class="skill-name">Data Cleaning</span><span class="skill-bar"><span class="skill-fill" style="width:90%"></span></span></li>
-                        </ul>
+                    <div class="skill-card">
+                        <h3>Data Pipelines</h3>
+                        <p>ETL · Data Warehousing · Automated Reporting · Data Cleaning</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="projects-section interactive-section" aria-label="Portfolio projects">
+        <section id="work" class="section">
             <div class="container">
-                <div class="section-header reveal">
-                    <p class="section-eyebrow">Analytics Portfolio</p>
-                    <h2 class="section-title">Data-Driven <span class="accent">Projects</span></h2>
+                <div class="section-head">
+                    <span class="label">Things I've built</span>
+                    <h2>Projects</h2>
                 </div>
-                
                 <div class="project-grid">
-                    <article class="project-card reveal interactive-card featured">
-                        <div class="project-card-header">
-                            <span class="project-featured-tag">⭐ Featured</span>
-                            <h3 class="project-title">Sales Analytics Suite</h3>
-                        </div>
-                        <p class="project-tech">Python • Power BI • SQL • Airflow • Tableau • Excel</p>
-                        <p>6-page Power BI dashboard analyzing 50K+ transactions. Automated ETL pipeline. Uncovered $500K cross-selling opportunity.</p>
-                        <div class="project-results">
-                            <span class="result-badge">📊 50K+ Transactions</span>
-                            <span class="result-badge">⏱️ 15+ hrs/week saved</span>
-                            <span class="result-badge">💰 $500K Opportunity</span>
-                        </div>
-                        <a href="https://github.com/hithesh-20/sales-performence-dashbord" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">Customer Segmentation</h3>
-                        <p class="project-tech">SQL • Power BI • RFM Analysis • DAX</p>
-                        <p>RFM segmentation on 50K+ records. Identified top 20% customers driving 68% revenue.</p>
-                        <div class="project-results">
-                            <span class="result-badge">📊 50K+ Records</span>
-                            <span class="result-badge">🎯 68% Revenue Identified</span>
-                        </div>
-                        <a href="https://github.com/hithesh-20/Customer-Segmentation-" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">Loan Origination Analytics</h3>
-                        <p class="project-tech">React.js • Python • Flask • MySQL</p>
-                        <p>Full-stack loan workflow with automated credit risk scoring for financial institutions.</p>
-                        <a href="https://github.com/hithesh-20/los-lone-application-system-" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">UPI Fraud Detection</h3>
-                        <p class="project-tech">Python • SMOTE • Streamlit</p>
-                        <p>94% accuracy fraud detection analytics with real-time monitoring dashboard for fintech.</p>
-                        <div class="project-results">
-                            <span class="result-badge">✅ 94% Accuracy</span>
-                            <span class="result-badge">🔴 Real-time Monitoring</span>
-                        </div>
-                        <a href="https://github.com/hithesh-20/upi-fraud-detcotor" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">Campus Emergency Platform</h3>
-                        <p class="project-tech">Node.js • Express • MySQL • React.js</p>
-                        <p>Real-time emergency alert platform. AIET Ideathon 2025 winner.</p>
-                        <div class="project-results">
-                            <span class="result-badge">🏆 Ideathon Winner</span>
-                            <span class="result-badge">📱 Real-time Alerts</span>
-                        </div>
-                        <a href="https://github.com/hithesh-20/Campus-Support-Desk" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">A/B Testing Analytics</h3>
-                        <p class="project-tech">SciPy • Statsmodels • SQL</p>
-                        <p>Statistical testing validated 5% conversion increase with 95% confidence for e-commerce.</p>
-                        <div class="project-results">
-                            <span class="result-badge">📈 5% Conversion Lift</span>
-                            <span class="result-badge">✅ 95% Confidence</span>
-                        </div>
-                        <a href="https://github.com/hithesh-20/AB_test_analysis" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">Supply Chain Analytics</h3>
-                        <p class="project-tech">PySpark • AWS Athena • BigQuery</p>
-                        <p>50GB+ logistics data analysis. Identified bottlenecks projected to reduce costs by 10%.</p>
-                        <div class="project-results">
-                            <span class="result-badge">🗄️ 50GB+ Data</span>
-                            <span class="result-badge">💰 10% Cost Reduction</span>
-                        </div>
-                        <a href="https://github.com/hithesh-20/Big-Data-Supply-Chain-Optimization" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">HR Workforce Analytics</h3>
-                        <p class="project-tech">Python • Pandas • Power BI</p>
-                        <p>87% accuracy in identifying attrition drivers. Projected 15% turnover reduction.</p>
-                        <div class="project-results">
-                            <span class="result-badge">✅ 87% Accuracy</span>
-                            <span class="result-badge">📉 15% Turnover Reduction</span>
-                        </div>
-                        <a href="https://github.com/hithesh-20/HR-Attrition-Workforce-Analytics" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2026</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">Customer Churn Analysis</h3>
-                        <p class="project-tech">Python • Pandas • Power BI</p>
-                        <p>89% accuracy. Behavioral analysis projected 12% churn reduction.</p>
-                        <div class="project-results">
-                            <span class="result-badge">✅ 89% Accuracy</span>
-                            <span class="result-badge">📉 12% Churn Reduction</span>
-                        </div>
-                        <a href="https://github.com/hithesh-20/Predictive-Customer-Churn-Model" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">Expense Intelligence</h3>
-                        <p class="project-tech">Python • Excel • Pandas</p>
-                        <p>Automated expense categorization with budget alerts and trend visualization.</p>
-                        <a href="https://github.com/hithesh-20/Personal-Expense-Tracker-" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">Fire & Smoke Detection</h3>
-                        <p class="project-tech">Python • TensorFlow • OpenCV</p>
-                        <p>97.8% accuracy computer vision analytics for industrial safety monitoring.</p>
-                        <div class="project-results">
-                            <span class="result-badge">✅ 97.8% Accuracy</span>
-                            <span class="result-badge">🏭 Industrial Safety</span>
-                        </div>
-                        <a href="https://github.com/hithesh-20/fire-and-smoke-detector" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2026</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">Movie Recommendation</h3>
-                        <p class="project-tech">Python • Streamlit</p>
-                        <p>Analytics platform with 1M+ movie catalog and data-driven recommendations.</p>
-                        <a href="https://github.com/hithesh-20/Movie-recommendation-system" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-
-                    <article class="project-card reveal interactive-card">
-                        <h3 class="project-title">Learning Analytics</h3>
-                        <p class="project-tech">Python • NLP • Semantic Search</p>
-                        <p>NLP-powered knowledge retrieval with semantic search and automated quiz generation.</p>
-                        <a href="https://github.com/hithesh-20/AI-Course-Assistant" class="project-link" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> View on GitHub</a>
-                        <span class="year-badge">2025</span>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="resume" class="skills-section interactive-section" aria-label="Resume and education">
-            <div class="container">
-                <div class="section-header reveal">
-                    <p class="section-eyebrow">Professional Journey</p>
-                    <h2 class="section-title">Experience & <span class="accent">Education</span></h2>
-                </div>
-                <div class="resume-grid">
-                    <div class="resume-card reveal interactive-card">
-                        <h3>Education</h3>
-                        <p><strong>B.Tech Computer Science & Engineering</strong><br>2023 – 2027<br>Focus: Data Analytics, Business Intelligence. Coursework: DBMS, Statistical Analysis, DSA, Cloud Computing.</p>
-                        <span class="year-badge">2023–2027</span>
-                        <p style="margin-top: 1rem;"><strong>PUC — Science Stream</strong><br>JSS PU College, Mysuru</p>
-                        <span class="year-badge">2021–2023</span>
-                        <p style="margin-top: 1rem;"><strong>SSLC (77%)</strong><br>Rotary Midtown Academy, Mysuru</p>
-                        <span class="year-badge">2021</span>
+                    <div class="project-card">
+                        <h3>Sales Analytics Suite</h3>
+                        <p class="tech">Power BI · Python · SQL · Airflow</p>
+                        <p>Built a sales dashboard tracking 50K+ transactions. Automated reporting that saved 15+ hours a week for the team. Also found a $500K cross-sell opportunity just by looking at customer purchase patterns.</p>
+                        <a href="https://github.com/hithesh-20/sales-performence-dashbord" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
                     </div>
-                    <div class="resume-card reveal interactive-card">
-                        <h3>Experience</h3>
-                        <p><strong>Data Analytics Intern</strong><br>2025<br>Data cleaning, ETL, dashboard development, stakeholder reporting using Power BI and Python.</p>
-                        <p><strong>BI Developer (Freelance)</strong><br>2025 – Present<br>End-to-end BI solutions: ETL pipelines, Power BI dashboards, KPI tracking.</p>
-                        <p><strong>Data Analytics Contributor</strong><br>2024 – Present<br>Customer segmentation, sales analytics, churn analysis, workforce analytics.</p>
-                        <span class="year-badge">2024–Present</span>
+
+                    <div class="project-card">
+                        <h3>Customer Segmentation</h3>
+                        <p class="tech">SQL · Power BI · RFM Analysis</p>
+                        <p>Segmented 50K customers using RFM analysis. Found that the top 20% were driving 68% of revenue — helped the team focus retention efforts on the right people.</p>
+                        <a href="https://github.com/hithesh-20/Customer-Segmentation-" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Loan Origination System</h3>
+                        <p class="tech">React · Python · Flask · MySQL</p>
+                        <p>A web app for loan processing with automated credit scoring. Built for financial institutions to speed up approvals.</p>
+                        <a href="https://github.com/hithesh-20/los-lone-application-system-" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>UPI Fraud Detection</h3>
+                        <p class="tech">Python · SMOTE · Streamlit</p>
+                        <p>Fraud detection system with 94% accuracy. Includes a real-time monitoring dashboard — useful for fintech and banking teams.</p>
+                        <a href="https://github.com/hithesh-20/upi-fraud-detcotor" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Campus Emergency Platform</h3>
+                        <p class="tech">Node.js · Express · MySQL · React</p>
+                        <p>Real-time emergency alert system. Won AIET Ideathon 2025. Sends instant notifications and shows incident dashboards.</p>
+                        <a href="https://github.com/hithesh-20/Campus-Support-Desk" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>A/B Testing Analysis</h3>
+                        <p class="tech">Python · SciPy · SQL</p>
+                        <p>Designed and analyzed A/B tests for an e-commerce checkout flow. Found a 5% conversion improvement with statistical confidence of 95%.</p>
+                        <a href="https://github.com/hithesh-20/AB_test_analysis" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Supply Chain Analytics</h3>
+                        <p class="tech">PySpark · AWS Athena · BigQuery</p>
+                        <p>Analyzed 50GB+ of logistics data. Spotted bottlenecks that could reduce delivery costs by ~10% with some route changes.</p>
+                        <a href="https://github.com/hithesh-20/Big-Data-Supply-Chain-Optimization" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>HR Workforce Analytics</h3>
+                        <p class="tech">Python · Pandas · Power BI</p>
+                        <p>Predicted employee attrition with 87% accuracy. Found key reasons people leave — insights that could cut turnover by 15%.</p>
+                        <a href="https://github.com/hithesh-20/HR-Attrition-Workforce-Analytics" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2026</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Customer Churn Analysis</h3>
+                        <p class="tech">Python · Pandas · Power BI</p>
+                        <p>Churn prediction with 89% accuracy. Behavioral patterns showed how to reduce churn by 12% with targeted actions.</p>
+                        <a href="https://github.com/hithesh-20/Predictive-Customer-Churn-Model" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Expense Tracker</h3>
+                        <p class="tech">Python · Excel · Pandas</p>
+                        <p>Automated expense categorization tool with budget alerts and spending trends. Built for personal finance but works for small businesses too.</p>
+                        <a href="https://github.com/hithesh-20/Personal-Expense-Tracker-" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Fire & Smoke Detection</h3>
+                        <p class="tech">Python · TensorFlow · OpenCV</p>
+                        <p>A computer vision model for detecting fire and smoke in real-time — 97.8% accuracy. Could be used for industrial safety monitoring.</p>
+                        <a href="https://github.com/hithesh-20/fire-and-smoke-detector" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2026</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Movie Recommendation</h3>
+                        <p class="tech">Python · Streamlit</p>
+                        <p>A recommendation engine with a 1M+ movie catalog. Built to understand how recommendation systems work under the hood.</p>
+                        <a href="https://github.com/hithesh-20/Movie-recommendation-system" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Learning Assistant</h3>
+                        <p class="tech">Python · NLP · Semantic Search</p>
+                        <p>A Q&A bot that reads course materials and answers questions. Uses semantic search to find relevant content.</p>
+                        <a href="https://github.com/hithesh-20/AI-Course-Assistant" target="_blank" rel="noopener">View on GitHub →</a>
+                        <span class="year">2025</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="certifications" class="skills-section interactive-section" aria-label="Certifications">
+        <section id="contact" class="section alt contact">
             <div class="container">
-                <div class="section-header reveal">
-                    <p class="section-eyebrow">Credentials</p>
-                    <h2 class="section-title">Professional <span class="accent">Development</span></h2>
-                </div>
-                <div class="certifications-grid">
-                    <div class="cert-item interactive-card reveal"><h4>Data Analytics Specialization</h4><p><strong>U of Washington</strong> • 2026 • 4 capstone projects</p></div>
-                    <div class="cert-item interactive-card reveal"><h4>Google Cloud Data Engineering</h4><p><strong>Google Cloud</strong> • 2025 • BigQuery, ETL, cloud warehousing</p></div>
-                    <div class="cert-item interactive-card reveal"><h4>Software Engineering</h4><p><strong>IBM</strong> • 2025 • Git, CI/CD, Agile</p></div>
-                    <div class="cert-item interactive-card reveal"><h4>Web Development</h4><p><strong>IBM</strong> • 2025 • HTML/CSS/JS, responsive design</p></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section interactive-section" aria-label="Contact">
-            <div class="container">
-                <div class="contact-content reveal interactive-content">
-                    <h2>Let's <span class="accent">Connect</span></h2>
-                    <p>Open to data analytics and BI roles at MNCs. Available for internships and full-time opportunities.</p>
-                    
-                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/xrbekvqw" method="POST" onsubmit="return handleFormSubmit(event)">
-                        <input type="hidden" name="_subject" value="Portfolio Contact">
-                        <input type="hidden" name="_next" value="https://hithesh-20.github.io/My-portfolio/">
-                        <div class="form-row">
-                            <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
-                            <input type="email" name="email" placeholder="Your Email" required aria-label="Your email">
-                        </div>
-                        <input type="text" name="subject" placeholder="Subject" required aria-label="Subject">
-                        <textarea name="message" placeholder="Your Message" rows="4" required aria-label="Your message"></textarea>
-                        <button type="submit" class="btn primary-btn" id="form-submit-btn">Send Message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
-                    </form>
-                    <p id="form-status" style="margin-top: 1rem; font-size: 0.9rem; display: none;"></p>
-                    
-                    <div class="social-links" style="margin-top: 2rem;">
-                        <a href="https://linkedin.com/in/hithesh-d-8802a630b" class="social-link interactive-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
-                        <a href="https://github.com/hithesh-20" class="social-link interactive-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a>
-                        <a href="https://www.instagram.com/hitheshkoushikkk_/" class="social-link interactive-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile"><i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram</a>
-                        <a href="mailto:hitheshkowshik@gmail.com" class="social-link interactive-link" aria-label="Email"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+                <div class="contact-wrap">
+                    <h2>Let's talk</h2>
+                    <p>I'm looking for data analyst and BI internship roles. If you think I'd be a good fit for your team, I'd love to hear from you.</p>
+                    <div class="contact-links">
+                        <a href="mailto:hitheshkowshik@gmail.com" class="btn">Email me</a>
+                        <a href="https://linkedin.com/in/hithesh-d-8802a630b" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+                        <a href="https://github.com/hithesh-20" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer" role="contentinfo">
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Hithesh D. All rights reserved. | <a href="mailto:hitheshkowshik@gmail.com">hitheshkowshik@gmail.com</a> | Open to MNC Opportunities</p>
+            <p>&copy; 2025 Hithesh D</p>
         </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
